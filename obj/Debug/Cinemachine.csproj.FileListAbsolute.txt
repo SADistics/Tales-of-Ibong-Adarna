@@ -1,0 +1,2 @@
+D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Cinemachine.csproj.AssemblyReference.cache
+D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Cinemachine.csproj.CoreCompileInputs.cache
