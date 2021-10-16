@@ -17,11 +17,22 @@ namespace Pathfinding {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
 		private Transform noTarget;
+		public Transform[] moveSpots;
+		private float waitTime;
+		public float startWaitTime;
+		private int randomSpot;
+		private int prevSpot;
+		public bool aiDest;
+		public bool inAttackRange;
+
 		IAstarAI ai;
 
         private void Start()
         {
-			target = noTarget;
+			waitTime = startWaitTime;
+			randomSpot = Random.Range(0, moveSpots.Length);
+			prevSpot = randomSpot;
+			target = moveSpots[randomSpot].transform;
         }
 
         void OnEnable () {
@@ -40,6 +51,48 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
+
+			if (aiDest)
+			{
+                if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 2f)
+                {
+					if (waitTime <= 0)
+					{
+						aiDest = false;
+						randomSpot = Random.Range(0, moveSpots.Length);
+						prevSpot = randomSpot;
+						waitTime = startWaitTime;
+						target = moveSpots[randomSpot].transform;
+					}
+					else
+					{
+						waitTime -= Time.deltaTime;
+					}
+                }
+                else
+                {
+					if (waitTime <= 0)
+					{
+						aiDest = false;
+						randomSpot = Random.Range(0, moveSpots.Length);
+						prevSpot = randomSpot;
+						waitTime = startWaitTime;
+						target = moveSpots[randomSpot].transform;
+					}
+					else
+					{
+						waitTime -= Time.deltaTime;
+					}
+				}
+			}
+			else if (!aiDest && target == noTarget)
+            {
+				target = moveSpots[randomSpot].transform;
+			}
+			else if (!aiDest && inAttackRange)
+            {
+				target = noTarget;
+            }
 		}
 
 		public void GetPlayer(Transform player)
@@ -50,6 +103,12 @@ namespace Pathfinding {
 		public void OutOfRange()
         {
 			target = noTarget;
+			aiDest = false;
+        }
+
+		public void SetDest(bool nextDest)
+        {
+			aiDest = nextDest;
         }
 	}
 }

@@ -283,3 +283,4 @@ D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.Shader
 D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.ShaderGraph.Utilities.csproj.CopyComplete
 D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.ShaderGraph.Utilities.dll
 D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.ShaderGraph.Utilities.pdb
+D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.ShaderGraph.Utilities.csproj.AssemblyReference.cache

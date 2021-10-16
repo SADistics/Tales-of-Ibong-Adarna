@@ -1,1 +1,2 @@
 D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.2D.Tilemap.Extras.Editor.csproj.CoreCompileInputs.cache
+D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.2D.Tilemap.Extras.Editor.csproj.AssemblyReference.cache
