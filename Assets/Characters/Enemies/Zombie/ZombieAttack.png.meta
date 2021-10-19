@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: bd8065f644f8e0a479f91c1d4550d0c6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6110456907742226210
+    second: ZombieAttack_0
+  - first:
+      213: -919882710125404491
+    second: ZombieAttack_1
+  - first:
+      213: 3157100177331716593
+    second: ZombieAttack_2
+  - first:
+      213: -3112844997425633342
+    second: ZombieAttack_3
+  - first:
+      213: 7179474213224602943
+    second: ZombieAttack_4
+  - first:
+      213: -3203837127043433104
+    second: ZombieAttack_5
+  - first:
+      213: -2090183406250075987
+    second: ZombieAttack_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +62,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,7 +122,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ZombieAttack_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 2
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed851b621db433ba0800000000000000
+      internalID: -6110456907742226210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombieAttack_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 2
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be93f38c8beb33f0800000000000000
+      internalID: -919882710125404491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombieAttack_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 2
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f10e2e52e540db20800000000000000
+      internalID: 3157100177331716593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombieAttack_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 2
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7e797a7f3fcc4d0800000000000000
+      internalID: -3112844997425633342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombieAttack_4
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 2
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d545922cd92a360800000000000000
+      internalID: 7179474213224602943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombieAttack_5
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 2
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d3e5c8b1fa983d0800000000000000
+      internalID: -3203837127043433104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombieAttack_6
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 2
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da85c0b244d2ef2e0800000000000000
+      internalID: -2090183406250075987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

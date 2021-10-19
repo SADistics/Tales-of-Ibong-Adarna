@@ -9,7 +9,7 @@ public class WaypointScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("GoblinEnemy"))
         {
             aiDest.OutOfRange();
             aiDest.SetDest(true);
@@ -18,7 +18,7 @@ public class WaypointScript : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("GoblinEnemy"))
         {
             aiDest.SetDest(true);
         }
@@ -26,7 +26,7 @@ public class WaypointScript : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("GoblinEnemy"))
         {
             aiDest.SetDest(false);
         }

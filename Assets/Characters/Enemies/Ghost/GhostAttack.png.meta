@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 9afcbc785130347428c176b6672c6407
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3987011388434069450
+    second: GhostAttack_0
+  - first:
+      213: -2977981801198352798
+    second: GhostAttack_1
+  - first:
+      213: 4295156431522766159
+    second: GhostAttack_2
+  - first:
+      213: -6958155311487899049
+    second: GhostAttack_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,7 +113,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GhostAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63843fc244a4ba8c0800000000000000
+      internalID: -3987011388434069450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostAttack_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 2
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2668eff64551ca6d0800000000000000
+      internalID: -2977981801198352798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostAttack_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 2
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d16ab84067b9b30800000000000000
+      internalID: 4295156431522766159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostAttack_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 2
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a24ce2c9aaf6f90800000000000000
+      internalID: -6958155311487899049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

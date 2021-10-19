@@ -8,12 +8,23 @@ public class IdleState : State
     public ChaseState chaseState;
     public bool ISeePlayer;
     public AIDestinationSetter aiDest;
+    public AIPath aiPath;
+    public Animator anim;
 
     //Patrol
     public EnemyStats enemyStats;
 
     public override State RunCurrentState()
     {
+        if (aiPath.canMove)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else if(aiDest.aiDest)
+        {
+            anim.SetBool("isWalking", false);
+        }
+
         if (ISeePlayer)
         {
             return chaseState;

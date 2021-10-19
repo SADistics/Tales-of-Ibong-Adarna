@@ -34,6 +34,7 @@ public class AttackState : State
             {
                 //enemyAnim.SetTrigger("EnemyAttack");
                 enemyAnim.SetBool("isAttacked", true);
+                enemyAnim.SetBool("isWalking", false);
                 Vector3 difference = player.transform.position - transform.position;
                 difference = difference.normalized * thrust;
                 player.AddForce(difference, ForceMode.Impulse);
@@ -49,6 +50,7 @@ public class AttackState : State
                     waitTime = startWaitTime;
                     isAttacked = false;
                     enemyAnim.SetBool("isAttacked", false);
+                    enemyAnim.SetBool("isWalking", true);
                     return this;
                 }
                 else
@@ -67,11 +69,13 @@ public class AttackState : State
                 isAttacked = false;
                 waitTime = startWaitTime;
                 enemyAnim.SetBool("isAttacked", false);
+                
                 return chaseState;
             }
             else
             {
                 waitTime -= Time.deltaTime;
+                enemyAnim.SetBool("isWalking", false);
                 return this;
             }
         }

@@ -54,6 +54,7 @@ namespace Pathfinding {
 
 			if (aiDest)
 			{
+				this.GetComponentInChildren<Animator>().SetBool("isWalking", false);
                 if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 2f)
                 {
 					if (waitTime <= 0)
