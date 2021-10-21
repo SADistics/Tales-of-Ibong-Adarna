@@ -23,6 +23,10 @@ public class AttackState : State
     private void Start()
     {
         waitTime = startWaitTime;
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        }
     }
 
     public override State RunCurrentState()

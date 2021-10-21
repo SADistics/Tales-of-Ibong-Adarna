@@ -443,6 +443,7 @@ MonoBehaviour:
   Strength: 5
   Agility: 2
   Defense: 2
+  Health: 100
 --- !u!1 &5675387969437657751
 GameObject:
   m_ObjectHideFlags: 0

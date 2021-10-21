@@ -7,10 +7,13 @@ public class EnemyStats : MonoBehaviour
     public int Strength;
     public int Agility;
     public int Defense;
+    public int Health;
 
     public int GetEnemyStrength() => Strength;
 
     public int GetEnemyAgility() => Agility;
 
     public int GetEnemyDefense() => Defense;
+
+    public int GetHealth() => Health;
 }
