@@ -51,11 +51,15 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
+            if (ai.reachedDestination)
+            {
+				aiDest = true;
+            }
 
 			if (aiDest)
 			{
 				this.GetComponentInChildren<Animator>().SetBool("isWalking", false);
-                if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 2f)
+                if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 5f)
                 {
 					if (waitTime <= 0)
 					{

@@ -144,7 +144,7 @@ MonoBehaviour:
   enemyAnim: {fileID: 4694430023535166932}
   startWaitTime: 5
   isAttacked: 0
-  thrust: 100
+  thrust: 50
   player: {fileID: 0}
   knockTime: 0.1
 --- !u!1 &4694430022029173660
@@ -262,9 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
-  moveSpots:
-  - {fileID: 0}
-  - {fileID: 0}
+  moveSpots: []
   startWaitTime: 3
   aiDest: 0
   inAttackRange: 0

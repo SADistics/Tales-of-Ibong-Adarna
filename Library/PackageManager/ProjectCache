@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637696370529971341
-    m_Hash: 2032515468
+      ticks: 637708681665310719
+    m_Hash: 2903959509
   m_LockFileStatus:
     m_FilePath: D:/Users/Christian/Documents/GitHub/Tales-of-Ibong-Adarna/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637696370532220244
-    m_Hash: 153889479
+      ticks: 637708681665320697
+    m_Hash: 345509325
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -157,6 +157,7 @@ m_PackageAssets:
         - 2.0.0
         - 2.2.0
         - 2.2.1
+        - 3.0.0
         compatible:
         - 1.5.0-preview
         - 1.6.0-preview.1
@@ -280,11 +281,13 @@ m_PackageAssets:
         - 2.7.4
         - 2.7.5
         - 2.7.8
+        - 2.7.9
         - 2.8.0-exp.1
         - 2.8.0-exp.2
         - 2.8.0-pre.1
         - 2.8.0
         - 2.8.1
+        - 2.8.2
         compatible:
         - 2.5.0
         - 2.6.0-preview.2
@@ -308,11 +311,13 @@ m_PackageAssets:
         - 2.7.4
         - 2.7.5
         - 2.7.8
+        - 2.7.9
         - 2.8.0-exp.1
         - 2.8.0-exp.2
         - 2.8.0-pre.1
         - 2.8.0
         - 2.8.1
+        - 2.8.2
         verified: 2.6.10
       dependencies: []
       resolvedDependencies: []
@@ -409,6 +414,8 @@ m_PackageAssets:
         - 1.11.2
         - 1.12.5
         - 1.13.5
+        - 1.14.1
+        - 1.15.1
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -425,6 +432,8 @@ m_PackageAssets:
         - 1.11.2
         - 1.12.5
         - 1.13.5
+        - 1.14.1
+        - 1.15.1
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -961,9 +970,11 @@ m_PackageAssets:
         - 1.1.26
         - 1.1.27
         - 1.1.29
+        - 1.1.30
         compatible:
         - 1.1.29
-        verified: 1.1.29
+        - 1.1.30
+        verified: 1.1.30
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
@@ -1240,12 +1251,14 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
         - 1.6.0-pre.5
         - 1.6.1
         - 1.6.2
+        - 1.6.3
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -1261,12 +1274,14 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
         - 1.6.0-pre.5
         - 1.6.1
         - 1.6.2
+        - 1.6.3
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
