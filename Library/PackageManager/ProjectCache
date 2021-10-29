@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637708681665310719
-    m_Hash: 2903959509
+      ticks: 637709164403537150
+    m_Hash: 2032515468
   m_LockFileStatus:
     m_FilePath: D:/Users/Christian/Documents/GitHub/Tales-of-Ibong-Adarna/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637708681665320697
-    m_Hash: 345509325
+      ticks: 637709164407985592
+    m_Hash: 153889479
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
