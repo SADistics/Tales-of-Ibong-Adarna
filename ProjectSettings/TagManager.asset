@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - BossMusic
   - GoblinEnemy
+  - NPC
   layers:
   - Default
   - TransparentFX

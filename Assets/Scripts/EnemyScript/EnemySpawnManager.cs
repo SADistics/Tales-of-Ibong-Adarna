@@ -23,6 +23,7 @@ public class EnemySpawnManager : MonoBehaviour
         for (int j = 0; j < waypoints.Length; j++)
         {
             enemy.GetComponent<Pathfinding.AIDestinationSetter>().moveSpots[j] = waypoints[j];
+            randEnemyPref = rand.Next(enemyPrefab.Length);
         }
     }
 }

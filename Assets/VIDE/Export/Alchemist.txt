@@ -1,0 +1,58 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Alchemist
+---------------------------------
+#NODEID#
+0
+#TAG#
+Alchemist
+#ISPLAYER#
+False
+---
+#COMMENT#
+Welcome to the Potion Shop!
+---------------------------------
+#NODEID#
+1
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Shop
+#COMMENT#
+Talk
+#COMMENT#
+Bye
+---------------------------------
+#NODEID#
+2
+#TAG#
+Alchemist
+#ISPLAYER#
+False
+---
+#COMMENT#
+Potion is nice!
+#COMMENT#
+You need to prepare potion for your adventures.
+#COMMENT#
+So buy now!!
+---------------------------------
+#NODEID#
+3
+#TAG#
+Alchemist
+#ISPLAYER#
+False
+---
+#COMMENT#
+See you next time!
+---------------------------------
+#END#

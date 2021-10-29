@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VIDE_Data;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,14 +21,17 @@ public class PlayerMovement : MonoBehaviour
         distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
-    private void Update()
+    void Update()
     {
-        Movement();
-        rb.velocity = new Vector3(xMove, rb.velocity.y, zMove);
-
-        if (Input.GetKeyDown(KeyCode.Space)&&IsGrounded())
+        if (!VD.isActive)
         {
-            rb.AddForce(new Vector3(0, 1*speed, 0), ForceMode.Impulse);
+            Movement();
+            rb.velocity = new Vector3(xMove, rb.velocity.y, zMove);
+
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            {
+                rb.AddForce(new Vector3(0, 1 * speed, 0), ForceMode.Impulse);
+            }
         }
     }
 
