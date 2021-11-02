@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4267450762155762350}
   - component: {fileID: 4267450762155762341}
   - component: {fileID: 4267450762155762346}
+  - component: {fileID: 4190037000585046174}
+  - component: {fileID: 4185935019085026874}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -150,3 +152,31 @@ MonoBehaviour:
   speed: 0
   Agility:
     baseStats: 5
+--- !u!114 &4190037000585046174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267450762155762351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d8ecf782d28144692f96e461154464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strength:
+    baseStats: 5
+  thrust: 0
+--- !u!135 &4185935019085026874
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267450762155762351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}

@@ -7,6 +7,11 @@ public class enemyGFX : MonoBehaviour
 {
     public AIPath aiPath;
 
+    private void Start()
+    {
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), GetComponent<Collider>());
+    }
+
     // Update is called once per frame
     void Update()
     {

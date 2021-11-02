@@ -27,11 +27,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Movement();
             rb.velocity = new Vector3(xMove, rb.velocity.y, zMove);
-
-            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-            {
-                rb.AddForce(new Vector3(0, 1 * speed, 0), ForceMode.Impulse);
-            }
         }
     }
 
