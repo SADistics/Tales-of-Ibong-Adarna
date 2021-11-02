@@ -1,0 +1,64 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Hermit
+---------------------------------
+#NODEID#
+0
+#TAG#
+Hermit
+#ISPLAYER#
+False
+---
+#COMMENT#
+Hello can I have your moment?
+---------------------------------
+#NODEID#
+1
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+What is it?
+#COMMENT#
+Sorry I'm busy at the moment
+---------------------------------
+#NODEID#
+2
+#TAG#
+Hermit
+#ISPLAYER#
+False
+---
+#COMMENT#
+I need you to do something for me. of course, I'll pay!
+---------------------------------
+#NODEID#
+3
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Accept the offer...
+#COMMENT#
+Refuse the offer...
+---------------------------------
+#NODEID#
+4
+#TAG#
+Hermit
+#ISPLAYER#
+False
+---
+#COMMENT#
+Okay sorry to disturb you. Have a nice day!
+---------------------------------
+#END#

@@ -23,7 +23,7 @@ public class PlayerInteractDialogue : MonoBehaviour
         {
             interactionPrompt.SetActive(false);
         }
-        interactionPromptText = GameObject.Find("InteractionPromptText").GetComponent<Text>();
+        interactionPromptText = interactionPrompt.GetComponentInChildren<Text>();
         interactionPromptText.text = "";
     }
 
@@ -52,7 +52,7 @@ public class PlayerInteractDialogue : MonoBehaviour
         if (other.GetComponent<VIDE_Assign>() != null)
         {
             inTrigger = other.GetComponent<VIDE_Assign>();
-            interactionPromptText.text = "Press 'E' to interact with "+inTrigger.alias;
+            interactionPromptText.text = "Press 'Space' to interact with " + inTrigger.alias;
         }
 
     }

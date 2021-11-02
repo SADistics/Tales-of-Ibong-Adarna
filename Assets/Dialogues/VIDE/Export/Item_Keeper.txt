@@ -1,0 +1,58 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Item_Keeper
+---------------------------------
+#NODEID#
+0
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Good Day, Prince!
+#COMMENT#
+What do you want to do?
+---------------------------------
+#NODEID#
+1
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Shop
+#COMMENT#
+Talk
+#COMMENT#
+Goodbye
+---------------------------------
+#NODEID#
+2
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+You can gain new materials by fighting with monsters.
+#COMMENT#
+Or.. by completing quests
+---------------------------------
+#NODEID#
+3
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Farewell, Prince!
+---------------------------------
+#END#
