@@ -1,0 +1,36 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.18f1 (a7d1c678663c) revision 10998214'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19043.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 20399 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+D:\Program Files\Unity\2020.3.18f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker9
+-projectPath
+D:/Users/Christian/Documents/GitHub/Tales-of-Ibong-Adarna
+-logFile
+Logs/AssetImportWorker9.log
+-srvPort
+58641
+Successfully changed project path to: D:/Users/Christian/Documents/GitHub/Tales-of-Ibong-Adarna
+D:/Users/Christian/Documents/GitHub/Tales-of-Ibong-Adarna
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 3157.68 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.18f1 (a7d1c678663c)
+[Subsystems] Discovering subsystems at path D:/Program Files/Unity/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Users/Christian/Documents/GitHub/Tales-of-Ibong-Adarna/Assets
+GfxDevice: creating device client; threaded=0
+d3d12: loaded!
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce GTX 1050 (ID=0x1c8d)
+    Vendor:          
+    VRAM:            4021 MB
+    App VRAM Budget: 3417 MB
+    Driver:          30.0.14.7111
+d3d12: Profiler is enabled, but stable power state is not. GPU timing errors are expected.

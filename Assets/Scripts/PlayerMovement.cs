@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Xpos", -1);
             anim.SetBool("IsMove", true);
             xPos = -1f;
-            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Xpos", 1);
             anim.SetBool("IsMove", true);
             xPos = 1f;
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {

@@ -22,6 +22,7 @@ public class AttackState : State
     public Rigidbody player;
     private PlayerGuard playerGuard;
     private PlayerHealth playerHealth;
+    private GameObject playerObject;
     public float knockTime;
 
     private void Start()
@@ -29,6 +30,7 @@ public class AttackState : State
         waitTime = startWaitTime;
         if (GameObject.FindGameObjectWithTag("Player"))
         {
+            playerObject = GameObject.FindGameObjectWithTag("Player");
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
             playerGuard = player.GetComponent<PlayerGuard>();
             playerHealth = player.GetComponent<PlayerHealth>();
@@ -52,11 +54,13 @@ public class AttackState : State
                 {
                     playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense.GetStats()) - enemyStats.GetEnemyStrength();
                     playerHealth.SetHealthBarValue(playerHealth.curHP);
+                    playerObject.GetComponent<Animator>().SetTrigger("onHit");
                 }
                 else
                 {
                     playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense.GetStats()) - enemyStats.GetEnemyStrength();
                     playerHealth.SetHealthBarValue(playerHealth.curHP);
+                    playerObject.GetComponent<Animator>().SetTrigger("onHit");
                 }
                 Vector3 difference = player.transform.position - transform.position;
                 difference = difference.normalized * thrust;

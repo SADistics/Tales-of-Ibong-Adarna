@@ -19,7 +19,9 @@ public class PlayerAttack : MonoBehaviour
     #endregion
 
     #region WeaponCheck
-    private bool isBow;
+    public bool isBow;
+    public bool isBronze, isSilver, isBlood;
+    public GameObject currWeap;
     #endregion
 
     #region Knockback
@@ -62,6 +64,28 @@ public class PlayerAttack : MonoBehaviour
             GameObject.Find("Archer1").SetActive(false);
             GameObject.Find("Archer2").SetActive(false);
         }
+
+        #region Check Weapon Quality
+        /*if (isSilver)
+        {
+            currWeap = GameObject.Find("WeaponA");
+            currWeap.SetActive(false);
+            GameObject.Find("WeaponB").SetActive(false);
+            GameObject.Find("WeaponC").SetActive(false);
+        }else if (isBronze)
+        {
+            currWeap = GameObject.Find("WeaponB");
+            currWeap.SetActive(false);
+            GameObject.Find("WeaponA").SetActive(false);
+            GameObject.Find("WeaponC").SetActive(false);
+        }else if (isBlood)
+        {
+            currWeap = GameObject.Find("WeaponC");
+            currWeap.SetActive(false);
+            GameObject.Find("WeaponA").SetActive(false);
+            GameObject.Find("WeaponB").SetActive(false);
+        }*/
+        #endregion
     }
 
     void Update()
