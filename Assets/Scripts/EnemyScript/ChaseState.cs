@@ -36,7 +36,15 @@ public class ChaseState : State
     {
         if (other.CompareTag("Player"))
         {
-            isinAttackRange = true;
+            if (!other.GetComponent<PlayerHealth>().isDead||
+                    !other.GetComponent<PlayerHealth>().isSpotted)
+            {
+                isinAttackRange = true;
+                other.GetComponent<PlayerHealth>().isSpotted = true;
+            }
+                
+            else
+                isinAttackRange = false;
         }
     }
 
@@ -45,6 +53,8 @@ public class ChaseState : State
         if (other.CompareTag("Player"))
         {
             isinAttackRange = false;
+            if (other.GetComponent<PlayerHealth>().isSpotted)
+                other.GetComponent<PlayerHealth>().isSpotted = false;
         }
     }
 }

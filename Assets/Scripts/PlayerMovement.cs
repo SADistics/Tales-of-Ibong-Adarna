@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!VD.isActive)
+        if (!VD.isActive && !GetComponent<PlayerHealth>().isDead)
         {
             Movement();
             rb.velocity = new Vector3(xMove, rb.velocity.y, zMove);

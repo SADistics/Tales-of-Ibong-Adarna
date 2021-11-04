@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -17,28 +19,54 @@ public class PlayerAttack : MonoBehaviour
     #endregion
 
     #region WeaponCheck
-    private bool isSword;
+    private bool isBow;
     #endregion
 
     #region Knockback
     public float thrust;
     #endregion
+
+    #region SkillCheck
+    bool skill1Ready, skill1Attack;
+    bool skill2Ready, skill2Attack;
+    public Image skillImage1;
+    public Image skillImage2;
+    private float currentCoolDown, currentCoolDown2;
+    public float skillCoolDown, skillCoolDown2;
+    #endregion
+
+    #region Attack Delay
+    private bool isAttack;
+    #endregion
+
     void Start()
     {
+        skillCoolDown = 5f;
+        skillCoolDown2 = 10f;
+        isAttack = false;
         anim = GetComponent<Animator>();
-        if (isSword)
+        skill1Ready = true; skill2Ready = true;
+        if (isBow)
         {
             thrust = 5;
+            skillImage1 = GameObject.Find("Archer1").GetComponent<Image>();
+            skillImage2 = GameObject.Find("Archer2").GetComponent<Image>();
+            GameObject.Find("Warrior1").SetActive(false);
+            GameObject.Find("Warrior2").SetActive(false);
         }
         else
         {
-            thrust = 3;
+            thrust = 5;
+            skillImage1 = GameObject.Find("Warrior1").GetComponent<Image>();
+            skillImage2 = GameObject.Find("Warrior2").GetComponent<Image>();
+            GameObject.Find("Archer1").SetActive(false);
+            GameObject.Find("Archer2").SetActive(false);
         }
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")&&!isAttack)
         {
             StartCoroutine(AttackCo()); //Animation
             if (isinRange)
@@ -49,21 +77,139 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            //Skill 1
-        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            //Skill 1
+            if (skill1Ready)
+            {
+                StartCoroutine(Skill1At());
+                if (enemy != null)
+                {
+                    StartCoroutine(SkillKnockCo(enemy));
+                }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             //Skill 2
+            if (skill2Ready)
+            {
+                StartCoroutine(Skill2At());
+                if (enemy != null)
+                {
+                    StartCoroutine(SkillKnockCo(enemy));
+                }
+            }
         }
 
-        if (enem == null)
+        if (enem == null && !GetComponent<PlayerHealth>().isDead)
         {
             GetComponent<Rigidbody>().isKinematic = false;
         }
+
+        if (!skill1Ready)
+        {
+            if (currentCoolDown < skillCoolDown)
+            {
+                currentCoolDown += Time.deltaTime;
+                skillImage1.fillAmount = currentCoolDown / skillCoolDown;
+            }
+            else
+            {
+                skill1Ready = true;
+            }
+        }
+        if (!skill2Ready)
+        {
+            if (currentCoolDown2 < skillCoolDown2)
+            {
+                currentCoolDown2 += Time.deltaTime;
+                skillImage2.fillAmount = currentCoolDown2 / skillCoolDown2;
+            }
+            else
+            {
+                skill2Ready = true;
+            }
+        }
     }
 
+    #region IEnumerators
+    private IEnumerator AttackCo()
+    {
+        isAttack = true;
+        anim.SetBool("attacking", true);
+        yield return null;
+        anim.SetBool("attacking", false);
+        if (enemy != null)
+        {
+            if (enemStats.GetHealth() > 0)
+                enemStats.Health -= ((Strength.GetStats()+thrust)-enemStats.GetEnemyDefense());
+            else
+            {
+                enemStats.Health -= 0;
+            }
+        }
+        yield return new WaitForSeconds(1);
+        isAttack = false;
+    }
+    private IEnumerator KnockCo(Rigidbody enemy)
+    {
+        Vector3 forceDirection = enemy.transform.position - transform.position;
+        Vector3 force = forceDirection.normalized * thrust;
+        enemy.velocity = force;
+        yield return new WaitForSeconds(3f);
+        enemy.velocity = new Vector3();
+    }
+    private IEnumerator Skill1At()
+    {
+        currentCoolDown = 0;
+        anim.SetBool("attacking", true); //anim.SetBool("skill1AT", true);
+        yield return null;
+        anim.SetBool("attacking", false); //anim.SetBool("skill1AT", false);
+        skill1Ready = false;
+        if (enemy != null)
+        {
+            if (enemStats.GetHealth() > 0)
+            {
+                enemStats.Health -= ((Strength.GetStats() + 10) - enemStats.GetEnemyDefense());
+            }
+            else
+            {
+                enemStats.Health -= 0;
+            }
+        }
+        yield return new WaitForSeconds(.33f);
+    }
+    private IEnumerator Skill2At()
+    {
+        currentCoolDown2 = 0;
+        anim.SetBool("attacking", true); //anim.SetBool("skill2AT", true);
+        yield return null;
+        anim.SetBool("attacking", false); //anim.SetBool("skill2AT", false);
+        skill2Ready = false;
+        if (enemy != null)
+        {
+            if (enemStats.GetHealth() > 0)
+            {
+                enemStats.Health -= ((Strength.GetStats() + 15) - enemStats.GetEnemyDefense());
+            }
+            else
+            {
+                enemStats.Health -= 0;
+            }
+        }
+        yield return new WaitForSeconds(.33f);
+    }
+    private IEnumerator SkillKnockCo(Rigidbody enemy)
+    {
+        Vector3 forceDirection = enemy.transform.localPosition - transform.position;
+        Vector3 force = forceDirection.normalized * (thrust + 10);
+        enemy.velocity = force;
+        yield return new WaitForSeconds(3f);
+    }
+    #endregion
+
+    #region Triggers
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy") || other.CompareTag("GoblinEnemy"))
@@ -74,7 +220,16 @@ public class PlayerAttack : MonoBehaviour
             isinRange = true;
         }
     }
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Enemy") || other.CompareTag("GoblinEnemy"))
+        {
+            enem = other.gameObject;
+            enemy = other.GetComponentInChildren<Rigidbody>();
+            enemStats = other.GetComponentInChildren<EnemyStats>();
+            isinRange = true;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Enemy") || other.CompareTag("GoblinEnemy"))
@@ -82,35 +237,7 @@ public class PlayerAttack : MonoBehaviour
             isinRange = false;
             enemy = null;
             enem = null;
-        }        
-    }
-
-    private IEnumerator AttackCo()
-    {
-        anim.SetBool("attacking", true);
-        yield return null;
-        anim.SetBool("attacking", false);
-        yield return new WaitForSeconds(2f);
-        if (enemStats.GetHealth() > 0)
-            enemStats.Health -= Strength.GetStats();
-        else
-        {
-            enemStats.Health -= 0;
         }
     }
-
-    private IEnumerator AttackCDT()
-    {
-        yield return new WaitForSeconds(6f);
-    }
-
-    private IEnumerator KnockCo(Rigidbody enemy)
-    {
-        Vector3 forceDirection = enemy.transform.position - transform.position;
-        Vector3 force = forceDirection.normalized * thrust;
-        enemy.velocity = force;
-        yield return new WaitForSeconds(3f);
-
-        enemy.velocity = new Vector3();
-    }
+    #endregion
 }

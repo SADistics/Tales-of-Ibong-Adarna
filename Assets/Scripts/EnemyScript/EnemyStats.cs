@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public int Strength;
-    public int Agility;
-    public int Defense;
-    public int Health;
+    public float Strength;
+    public float Agility;
+    public float Defense;
+    public float Health;
 
-    public int GetEnemyStrength() => Strength;
+    public float GetEnemyStrength() => Strength;
 
-    public int GetEnemyAgility() => Agility;
+    public float GetEnemyAgility() => Agility;
 
-    public int GetEnemyDefense() => Defense;
+    public float GetEnemyDefense() => Defense;
 
-    public int GetHealth() => Health;
+    public float GetHealth() => Health;
 }

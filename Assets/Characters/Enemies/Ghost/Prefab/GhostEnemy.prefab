@@ -105,8 +105,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2897088593824516537}
   - component: {fileID: 2897088593824516486}
-  - component: {fileID: 2897088593824516487}
-  - component: {fileID: 2897088593824516484}
   - component: {fileID: 2897088593824516482}
   - component: {fileID: 2897088593824516485}
   m_Layer: 0
@@ -124,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2897088593824516483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.32593894, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2897088595315890655}
@@ -183,36 +181,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &2897088593824516487
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2897088593824516483}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.11344401
-  m_Height: 0.52475256
-  m_Direction: 1
-  m_Center: {x: -0.019068401, y: -0.072376296, z: 0}
---- !u!54 &2897088593824516484
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2897088593824516483}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!95 &2897088593824516482
 Animator:
   serializedVersion: 3
@@ -291,6 +259,7 @@ MonoBehaviour:
   chaseState: {fileID: 2897088595050751421}
   aiPath: {fileID: 2897088594601775478}
   enemyAnim: {fileID: 2897088593824516482}
+  enemyStats: {fileID: 2897088595315890654}
   startWaitTime: 5
   isAttacked: 0
   thrust: 50
@@ -310,6 +279,8 @@ GameObject:
   - component: {fileID: 2897088594601775465}
   - component: {fileID: 2897088594601775464}
   - component: {fileID: 5973523601671622010}
+  - component: {fileID: 5023858002439259389}
+  - component: {fileID: 4104426096370224105}
   m_Layer: 0
   m_Name: GhostEnemy
   m_TagString: Enemy
@@ -446,6 +417,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMain: {fileID: 2897088594601775476}
   hpBar: {fileID: 8206274441773930832}
+--- !u!136 &5023858002439259389
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897088594601775476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.11344401
+  m_Height: 0.52475256
+  m_Direction: 1
+  m_Center: {x: -0.019068401, y: -0.072376296, z: 0}
+--- !u!54 &4104426096370224105
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897088594601775476}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &2897088595050751416
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd56f4e7bb0a2e42988b0523b29a40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Strength: 5
+  Strength: 10
   Agility: 5
   Defense: 2
   Health: 100
@@ -642,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2897088595718943630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.32593903, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2897088595397871592}

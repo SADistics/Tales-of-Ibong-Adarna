@@ -12,7 +12,7 @@ public class EnemyHealthCheck : MonoBehaviour
     private EnemyStats enemyStats;
     private Animator enemyAnim;
     public TextMesh hpBar;
-    private int totalHealth;
+    private float totalHealth;
 
     private void Start()
     {
@@ -23,9 +23,10 @@ public class EnemyHealthCheck : MonoBehaviour
     void Update()
     {
         hpBar.text = "HP: " + enemyStats.GetHealth() + "/" + totalHealth;
-        if (enemyStats.GetHealth() == 0)
+        if (enemyStats.GetHealth() <= 0)
         {
-            enemyAnim.GetComponent<Transform>().position = new Vector3(enemyAnim.GetComponent<Transform>().position.x, enemyAnim.GetComponent<Transform>().position.y - 0.5f, enemyAnim.GetComponent<Transform>().position.z);
+            hpBar.text = "HP: " + 0 + "/" + totalHealth;
+            //enemyAnim.GetComponent<Transform>().position = new Vector3(enemyAnim.GetComponent<Transform>().position.x, enemyAnim.GetComponent<Transform>().position.y - 0.5f, enemyAnim.GetComponent<Transform>().position.z);
             enemyMain.GetComponent<AIPath>().canMove = false;
             enemyMain.GetComponent<StateManager>().enabled = false;
             /*enemyMain.GetComponentInChildren<Rigidbody>().detectCollisions = false;

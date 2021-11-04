@@ -6,9 +6,9 @@ using UnityEngine;
 public class Stats
 {
     [SerializeField]
-    private int baseStats;
+    private float baseStats;
 
-    public int GetStats()
+    public float GetStats()
     {
         return baseStats;
     }

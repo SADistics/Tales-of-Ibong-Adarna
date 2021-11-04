@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System;
 
 public class AttackState : State
 {
@@ -9,6 +10,7 @@ public class AttackState : State
     public ChaseState chaseState;
     public AIPath aiPath;
     public Animator enemyAnim;
+    public EnemyStats enemyStats;
 
     //DelayTime
     private float waitTime;
@@ -18,6 +20,8 @@ public class AttackState : State
     //Knockback
     public float thrust;
     public Rigidbody player;
+    private PlayerGuard playerGuard;
+    private PlayerHealth playerHealth;
     public float knockTime;
 
     private void Start()
@@ -26,6 +30,8 @@ public class AttackState : State
         if (GameObject.FindGameObjectWithTag("Player"))
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+            playerGuard = player.GetComponent<PlayerGuard>();
+            playerHealth = player.GetComponent<PlayerHealth>();
         }
     }
 
@@ -34,11 +40,24 @@ public class AttackState : State
         if (chaseState.isinAttackRange)
         {
             aiPath.canMove = false;
-            if (!isAttacked)
+            if (!isAttacked && !playerHealth.isDead)
             {
-                //enemyAnim.SetTrigger("EnemyAttack");
                 enemyAnim.SetBool("isAttacked", true);
                 enemyAnim.SetBool("isWalking", false);
+                if(playerGuard.onGuard && !playerGuard.onHit)
+                {
+                    playerGuard.onHit = true;
+                }
+                else if (playerGuard.onHit && playerGuard.onGuard)
+                {
+                    playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense.GetStats()) - enemyStats.GetEnemyStrength();
+                    playerHealth.SetHealthBarValue(playerHealth.curHP);
+                }
+                else
+                {
+                    playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense.GetStats()) - enemyStats.GetEnemyStrength();
+                    playerHealth.SetHealthBarValue(playerHealth.curHP);
+                }
                 Vector3 difference = player.transform.position - transform.position;
                 difference = difference.normalized * thrust;
                 player.AddForce(difference, ForceMode.Impulse);
@@ -52,9 +71,9 @@ public class AttackState : State
                 if (waitTime <= 0 && isAttacked)
                 {
                     waitTime = startWaitTime;
-                    isAttacked = false;
                     enemyAnim.SetBool("isAttacked", false);
                     enemyAnim.SetBool("isWalking", true);
+                    isAttacked = false;
                     return this;
                 }
                 else
@@ -84,6 +103,7 @@ public class AttackState : State
             }
         }
     }
+
 
     private IEnumerator KnockCo(Rigidbody player)
     {

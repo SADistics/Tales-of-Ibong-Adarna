@@ -9,7 +9,7 @@ public class enemyGFX : MonoBehaviour
 
     private void Start()
     {
-        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), GetComponent<Collider>());
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), GetComponentInParent<Collider>());
     }
 
     // Update is called once per frame
