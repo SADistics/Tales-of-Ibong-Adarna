@@ -1,0 +1,2 @@
+D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.VisualEffectGraph.Runtime.Player.csproj.CoreCompileInputs.cache
+D:\Users\Christian\Documents\GitHub\Tales-of-Ibong-Adarna\obj\Debug\Unity.VisualEffectGraph.Runtime.Player.csproj.AssemblyReference.cache

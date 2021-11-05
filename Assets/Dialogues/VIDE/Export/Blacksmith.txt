@@ -1,0 +1,112 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Blacksmith
+---------------------------------
+#NODEID#
+0
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Unexpected to see you here at the workshop, Prince!
+#COMMENT#
+What do you need?
+---------------------------------
+#NODEID#
+1
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Forge
+#COMMENT#
+Upgrade
+#COMMENT#
+Sell
+#COMMENT#
+Talk
+#COMMENT#
+Farewell
+---------------------------------
+#NODEID#
+2
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Sword
+#COMMENT#
+Bow
+#COMMENT#
+I change my mind...
+---------------------------------
+#NODEID#
+3
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Sword
+#COMMENT#
+Bow
+#COMMENT#
+I change my mind...
+---------------------------------
+#NODEID#
+4
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+What do you want to sell?
+---------------------------------
+#NODEID#
+5
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+There is a legend where you can get a legendary weapon when you find the mythical bird.
+---------------------------------
+#NODEID#
+6
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Take your time..
+---------------------------------
+#NODEID#
+7
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Sword
+#COMMENT#
+Bow
+#COMMENT#
+I change my mind...
+---------------------------------
+#END#

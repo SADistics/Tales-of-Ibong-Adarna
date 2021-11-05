@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VIDE_Data;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,14 +21,12 @@ public class PlayerMovement : MonoBehaviour
         distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
-    private void Update()
+    void Update()
     {
-        Movement();
-        rb.velocity = new Vector3(xMove, rb.velocity.y, zMove);
-
-        if (Input.GetKeyDown(KeyCode.Space)&&IsGrounded())
+        if (!VD.isActive && !GetComponent<PlayerHealth>().isDead)
         {
-            rb.AddForce(new Vector3(0, 1*speed, 0), ForceMode.Impulse);
+            Movement();
+            rb.velocity = new Vector3(xMove, rb.velocity.y, zMove);
         }
     }
 
@@ -40,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Xpos", -1);
             anim.SetBool("IsMove", true);
             xPos = -1f;
-            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
@@ -54,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Xpos", 1);
             anim.SetBool("IsMove", true);
             xPos = 1f;
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {

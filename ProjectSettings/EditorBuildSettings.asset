@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Castle/castle.unity
+    guid: 0981892fb9c8b3040a89a54f0698d997
+  - enabled: 1
+    path: Assets/Scenes/Forest/EntFor1.unity
+    guid: ee1619731e16848439df1bc424718115
+  - enabled: 1
+    path: Assets/Scenes/Forest/EntFor2.unity
+    guid: aa88d248e99a82944b6e6cb494cf81ba
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest1.unity
+    guid: d08f3e0f669b0d545ae1f1885a6725bb
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest2.unity
+    guid: fbfa78545defcd2488a6baeb0b55c51b
+  - enabled: 1
+    path: Assets/Scenes/Forest/ForestBoss.unity
+    guid: 80267d5a24cb64f44bf3ceedd58b466a
   m_configObjects: {}

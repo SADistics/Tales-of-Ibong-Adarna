@@ -1,0 +1,234 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Charlie
+---------------------------------
+#NODEID#
+5
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Chill out, man!
+#COMMENT#
+What? What is this place?
+---------------------------------
+#NODEID#
+6
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+You shouldn't be here either	
+#COMMENT#
+I spawned here!
+#COMMENT#
+Yes I should.
+---------------------------------
+#NODEID#
+10
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+(Ha- right....)
+#COMMENT#
+[Leave]
+---------------------------------
+#NODEID#
+13
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Chiiiill.... 
+#COMMENT#
+Ugh... bye.
+---------------------------------
+#NODEID#
+0
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Woah WOAH
+#COMMENT#
+N-no.. wait!
+#COMMENT#
+...
+---------------------------------
+#NODEID#
+2
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+You're not getting out of here alive!
+---------------------------------
+#NODEID#
+3
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+No, what? You shouldn't be here.
+---------------------------------
+#NODEID#
+4
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+That's it! Keep your intrusive mouth shut!
+---------------------------------
+#NODEID#
+7
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+You do that!
+#COMMENT#
+I'm sick of these caps spawning wherever they please.
+#COMMENT#
+Begone!
+---------------------------------
+#NODEID#
+8
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+No, you don't. That's but a filthy lie. Go away, kid.
+---------------------------------
+#NODEID#
+9
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+I did as well! But I didn't go around bothering caps!
+---------------------------------
+#NODEID#
+11
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+...excuse me?
+#COMMENT#
+Did I just hear a whisper?
+#COMMENT#
+Look, kid...
+#COMMENT#
+GO
+#COMMENT#
+AWAY.
+---------------------------------
+#NODEID#
+12
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+Did you just-
+---------------------------------
+#NODEID#
+14
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+Huh?
+#COMMENT#
+I OWN this place.
+---------------------------------
+#NODEID#
+1
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+Waddayawant?
+---------------------------------
+#NODEID#
+15
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+chill...?
+#COMMENT#
+CHIIILL?!?!?!?!??!?!?
+---------------------------------
+#NODEID#
+16
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+What now-
+#COMMENT#
+What do you think you are doing with that [WEAPON]?!
+#COMMENT#
+Get that thing away from me!
+---------------------------------
+#NODEID#
+18
+#TAG#
+Charlie
+#ISPLAYER#
+False
+---
+#COMMENT#
+GO AWAY!
+---------------------------------
+#NODEID#
+19
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Comment...
+---------------------------------
+#END#

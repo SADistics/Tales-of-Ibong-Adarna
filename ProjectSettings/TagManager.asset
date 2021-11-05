@@ -3,15 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Music
+  - Enemy
+  - BossMusic
+  - GoblinEnemy
+  - NPC
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Collider
   - Water
   - UI
-  - 
+  - Obstacle
   - 
   - 
   - 

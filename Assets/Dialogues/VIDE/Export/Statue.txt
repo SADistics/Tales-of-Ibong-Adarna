@@ -1,0 +1,78 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Statue
+---------------------------------
+#NODEID#
+0
+#TAG#
+Statue
+#ISPLAYER#
+False
+---
+#COMMENT#
+(There something happening in the statue..)
+---------------------------------
+#NODEID#
+1
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Save
+#COMMENT#
+Heal
+#COMMENT#
+Pray.. .. .
+#COMMENT#
+Leave
+---------------------------------
+#NODEID#
+2
+#TAG#
+Statue
+#ISPLAYER#
+False
+---
+#COMMENT#
+Do you want to save the game?
+---------------------------------
+#NODEID#
+3
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Yes
+#COMMENT#
+No
+---------------------------------
+#NODEID#
+4
+#TAG#
+Statue
+#ISPLAYER#
+False
+---
+#COMMENT#
+May god bless upon you
+---------------------------------
+#NODEID#
+5
+#TAG#
+Statue
+#ISPLAYER#
+False
+---
+#COMMENT#
+(You received a Mashmallow!)
+---------------------------------
+#END#
