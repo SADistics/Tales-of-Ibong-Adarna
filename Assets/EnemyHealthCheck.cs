@@ -14,11 +14,15 @@ public class EnemyHealthCheck : MonoBehaviour
     public TextMesh hpBar;
     private float totalHealth;
 
+    EnemySpawnManager esm;
+    public EnemyCount enemyCount;
+
     private void Start()
     {
         enemyAnim = enemyMain.GetComponentInChildren<Animator>();
         enemyStats = enemyMain.GetComponentInChildren<EnemyStats>();
         totalHealth = enemyStats.GetHealth();
+        enemyCount = GameObject.Find("EnemyManager").GetComponent<EnemyCount>();
     }
     void Update()
     {
@@ -37,8 +41,9 @@ public class EnemyHealthCheck : MonoBehaviour
 
     private IEnumerator DeathCo()
     {
-        enemyAnim.SetBool("isDead", true);
+        enemyAnim.SetBool("isDead", true);        
         yield return new WaitForSeconds(10);
         GameObject.Destroy(enemyMain);
+        enemyCount.DecreaseEnemy();
     }
 }

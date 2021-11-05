@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4879332164014492069}
-  - component: {fileID: 4879332164014492068}
+  - component: {fileID: 6271393736251731715}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4879332164014492068
+--- !u!114 &6271393736251731715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +46,8 @@ MonoBehaviour:
   spawns: {fileID: 0}
   enemyPrefab:
   - {fileID: 5587936775710743641, guid: 3863858d19d2db2468631f68cbdd9cb4, type: 3}
-  - {fileID: 4694430022029173660, guid: 5e2188f019c477046aa5217836e89ebb, type: 3}
-  - {fileID: 2897088594601775476, guid: ecad8ec31156dca47afcc45fff8792dd, type: 3}
   - {fileID: 5675387968740588564, guid: 58dc2289f7f148b479da6bb44f6fdb20, type: 3}
+  - {fileID: 2897088594601775476, guid: ecad8ec31156dca47afcc45fff8792dd, type: 3}
+  - {fileID: 4694430022029173660, guid: 5e2188f019c477046aa5217836e89ebb, type: 3}
   waypoints: []
+  enemyCount: 0

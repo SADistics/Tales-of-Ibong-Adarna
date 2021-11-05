@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class ExitTrigger : MonoBehaviour
 {
-    private void Awake()
+    EnemySpawnManager esm;
+    public EnemyCount ec;
+
+    void Awake()
     {
-        
+        ec = GameObject.Find("EnemyManager").GetComponent<EnemyCount>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) //if enemy count is 0
+        if (other.CompareTag("Player") && ec.enemyCount==0) //if enemy count is 0
         {
             LoadLevel();
         }
