@@ -41,6 +41,10 @@ public class PlayerAttack : MonoBehaviour
     private bool isAttack;
     #endregion
 
+    #region Animators
+    public Animator weaponAnim;
+    #endregion
+
     void Start()
     {
         skillCoolDown = 5f;
@@ -162,6 +166,7 @@ public class PlayerAttack : MonoBehaviour
     {
         isAttack = true;
         anim.SetBool("attacking", true);
+        weaponAnim.SetTrigger("Attack");
         yield return null;
         anim.SetBool("attacking", false);
         if (enemy != null)
