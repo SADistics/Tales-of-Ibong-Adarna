@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9525e246e82a76a469467d7c2e84eef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weap: {fileID: 4010806019412443860}
   speed: 0
   Agility:
     baseStats: 5
