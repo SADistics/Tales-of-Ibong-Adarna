@@ -200,10 +200,18 @@ PrefabInstance:
         saw one of his sons, Don Juan, killed by two thugs and then thrown into a
         well.'
       objectReference: {fileID: 0}
+    - target: {fileID: 6444495445890801099, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6444495446095693989, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
       propertyPath: m_Text
-      value: The eldest son, Don Pedro, was immediately ordered to seek the special
-        cure for the King's illness.
+      value: "The eldest son, Don Pedro, was immediately ordered to seek the \nspecial
+        cure for the King's illness."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444495446095693989, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6444495446426659669, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
       propertyPath: m_SceneBindings.Array.size
@@ -305,12 +313,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6444495446426659675, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6444495446934124936, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
       propertyPath: m_Text
       value: "The king could hardly eat or sleep because of the great anxiety. A
-        medical sage said that the \nonly cure for the King's illness was the song
+        medical sage said that \nthe only cure for the King's illness was the song
         of a bird found only on Mount Tabor \nspecifically on the glowing tree of
         Piedras Platas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444495446934124936, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31cb717e62a5fb94abd1a3dc26628cfb, type: 3}
