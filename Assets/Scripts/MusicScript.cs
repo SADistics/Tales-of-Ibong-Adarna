@@ -28,7 +28,12 @@ public class MusicScript : MonoBehaviour
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ForestBoss"))
         {
-            Destroy(this);
+            if (GameObject.Find("Music"))
+            {
+                Destroy(this);
+                Destroy(GameObject.Find("Music"));
+            }
+            
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 Cutscene"))
         {
@@ -36,23 +41,40 @@ public class MusicScript : MonoBehaviour
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Tutorial1"))
         {
-            Destroy(this);
+            if (GameObject.Find("Music"))
+            {
+                Destroy(this);
+                Destroy(GameObject.Find("Music"));
+            }
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Tutorial2"))
         {
-            Destroy(this);
+            if (GameObject.Find("Music"))
+            {
+                Destroy(this);
+                Destroy(GameObject.Find("Music"));
+            }
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("EntFor1"))
         {
-            Destroy(this);
+            if (GameObject.Find("Music"))
+            {
+                Destroy(this);
+                Destroy(GameObject.Find("Music"));
+            }
         }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 6"))
+        /*if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 6"))
         {
-            Destroy(this);
-        }
+            if (GameObject.Find("ForestMusic"))
+            {
+                Destroy(this);
+                Destroy(GameObject.Find("ForestMusic"));
+            }
+        }*/
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7"))
         {
             Destroy(this);
+            Destroy(GameObject.Find("Music"));
         }
     }
 }
