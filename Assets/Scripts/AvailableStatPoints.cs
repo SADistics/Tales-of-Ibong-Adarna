@@ -7,7 +7,9 @@ public class AvailableStatPoints : MonoBehaviour
 {
    
     public Text val;
-    public int astat = 99;
+    public int astat;
+
+    public static int avstat;
     public GameObject points;
     public GameObject points1;
     public GameObject points2;
@@ -22,8 +24,8 @@ public class AvailableStatPoints : MonoBehaviour
     private plusandminus availablepoints5;
     void Start()
     {
-
         val = GetComponent<Text>();
+        astat = 99;
         availablepoints = points.GetComponent<plusandminus>();
         availablepoints1 = points1.GetComponent<plusandminus>();
         availablepoints2 = points2.GetComponent<plusandminus>();
@@ -33,7 +35,8 @@ public class AvailableStatPoints : MonoBehaviour
     }
     void Update()
     {
-        val.text = astat.ToString();
+        avstat = astat;
+        val.text = avstat.ToString();
 
     }
     public void adecrement()
@@ -96,6 +99,8 @@ public class AvailableStatPoints : MonoBehaviour
         }
         
     }
+
+ 
     
 
 }

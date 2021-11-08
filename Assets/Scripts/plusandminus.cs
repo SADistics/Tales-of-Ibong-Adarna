@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class plusandminus : MonoBehaviour
 {
     public Text value;
-    public int stat;
+    public  int stat;
+    public static int truestat;
     public GameObject points;
     private AvailableStatPoints availablepoints;
     void Start()
@@ -18,12 +19,13 @@ public class plusandminus : MonoBehaviour
     }
     void Update()
     {
-        value.text = stat.ToString();
+        truestat = stat;
+        value.text = truestat.ToString();
 
     }
     public void increment()
     {
-        if (stat == 0)
+        if (stat == 0 && availablepoints.astat > 0)
             stat += 1;
         if (availablepoints.astat > 0)
         {

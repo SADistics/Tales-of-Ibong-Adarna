@@ -6,21 +6,25 @@ public class permstatagi : MonoBehaviour
 {
     public Text value;
     public int agistat;
-    public int permagi;
+    public static int permagi = 1;
+    public GameObject Points;
+    private plusandminus availablepoints;
     // Start is called before the first frame update
     void Start()
     {
         value = GetComponent<Text>();
+        availablepoints = Points.GetComponent<plusandminus>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        value.text = agistat.ToString();
+        value.text = permagi.ToString();
     }
     public void permincrement()
     {
-        agistat++;
+        if (availablepoints.stat > 0)
+            agistat++;
     }
 
     public void permdecrement()
