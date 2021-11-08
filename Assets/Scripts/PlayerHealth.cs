@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
                 GetComponent<Transform>().position.y - 0.4f,
                 GetComponent<Transform>().position.z
                 );
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         }
     }
 }

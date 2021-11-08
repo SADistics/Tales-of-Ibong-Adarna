@@ -331,7 +331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc8f949f4ec0a4444bc84e2e0b41a13e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee5539de33390d948857a4838d40885e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -432,7 +432,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1280082444}
-        m_TargetAssemblyTypeName: newgame, Assembly-CSharp
+        m_TargetAssemblyTypeName: Newgame, Assembly-CSharp
         m_MethodName: loadnewscene
         m_Mode: 1
         m_Arguments:
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280082443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e147ecf422f69864bbceae712f42ca25, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a284602e1f3d424bb0ed0394fdd90bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1280082445

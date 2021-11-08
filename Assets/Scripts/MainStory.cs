@@ -46,7 +46,7 @@ public class MainStory : MonoBehaviour
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 6"))
                 SceneManager.LoadScene(4, LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 Cutscene"))
-                SceneManager.LoadScene(15, LoadSceneMode.Single);
+                SceneManager.LoadScene("Chapter 7 End", LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 End"))
                 SceneManager.LoadScene("Chapter 8", LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 8"))
