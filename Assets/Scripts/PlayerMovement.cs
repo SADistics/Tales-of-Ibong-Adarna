@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     public GameObject weap;
-    [SerializeField]private float speed;
+    [SerializeField]public float speed;
     public Stats Agility;
 
     float xMove,xPos,zMove, distToGround;

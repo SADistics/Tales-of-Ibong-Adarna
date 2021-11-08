@@ -111,10 +111,6 @@ public class PlayerAttack : MonoBehaviour
             if (skill1Ready)
             {
                 StartCoroutine(Skill1At());
-                if (enemy != null)
-                {
-                    StartCoroutine(SkillKnockCo(enemy));
-                }
             }
         }
         if (Input.GetKeyDown(KeyCode.E))
@@ -192,9 +188,8 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator Skill1At()
     {
         currentCoolDown = 0;
-        anim.SetBool("attacking", true); //anim.SetBool("skill1AT", true);
+        GetComponent<PlayerMovement>().speed += 10;
         yield return null;
-        anim.SetBool("attacking", false); //anim.SetBool("skill1AT", false);
         skill1Ready = false;
         if (enemy != null)
         {
@@ -207,14 +202,16 @@ public class PlayerAttack : MonoBehaviour
                 enemStats.Health -= 0;
             }
         }
-        yield return new WaitForSeconds(.33f);
+        yield return new WaitForSeconds(2f);
+        GetComponent<PlayerMovement>().speed -= 10;
     }
     private IEnumerator Skill2At()
     {
         currentCoolDown2 = 0;
-        anim.SetBool("attacking", true); //anim.SetBool("skill2AT", true);
+        anim.SetBool("skill2AT", true);
+        weaponAnim.SetTrigger("skill2AT");
         yield return null;
-        anim.SetBool("attacking", false); //anim.SetBool("skill2AT", false);
+        anim.SetBool("skill2AT", false);
         skill2Ready = false;
         if (enemy != null)
         {

@@ -15,7 +15,11 @@ public class MainStory : MonoBehaviour
         else if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Tutorial2"))
         {
             this.gameObject.SetActive(true);
-        }        
+        }    
+        else if (SceneManager.GetActiveScene()== SceneManager.GetSceneByName("Stage_Town_1"))
+        {
+            this.gameObject.SetActive(true);
+        }
         else
             this.gameObject.SetActive(false);
     }
@@ -39,6 +43,16 @@ public class MainStory : MonoBehaviour
                 SceneManager.LoadScene("Tutorial2", LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 5.1"))
                 SceneManager.LoadScene("Stage_Town_1", LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 6"))
+                SceneManager.LoadScene(4, LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 Cutscene"))
+                SceneManager.LoadScene(15, LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 End"))
+                SceneManager.LoadScene("Chapter 8", LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 8"))
+                SceneManager.LoadScene("Chapter 9", LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 9"))
+                SceneManager.LoadScene("Titlescreen", LoadSceneMode.Single);
         }
     }
 

@@ -16,6 +16,8 @@ public class PlayerGuard : MonoBehaviour
     private GameObject shieldCont;
 
     private GameObject guardPrompt;
+    private Animator weap;
+    private GameObject pm;
     void Start()
     {
         onGuard = false;
@@ -26,6 +28,8 @@ public class PlayerGuard : MonoBehaviour
         shieldCont.SetActive(false);
         guardPrompt = GameObject.Find("GuardModePrompt");
         guardPrompt.SetActive(false);
+        weap = GameObject.Find("WeaponA").GetComponent<Animator>();
+        pm = GameObject.Find("DonJuan");
     }
 
     // Update is called once per frame
@@ -35,11 +39,13 @@ public class PlayerGuard : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             onGuard = true;
+            weap.SetBool("OnGuard", true);
             guardPrompt.SetActive(true);
         }
         else if (Input.GetMouseButtonUp(1))
         {
             onGuard = false;
+            weap.SetBool("OnGuard", false);
             guardPrompt.SetActive(false);
         }
 
