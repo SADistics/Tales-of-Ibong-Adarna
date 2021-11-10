@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerGuard : MonoBehaviour
 {
-    public Stats Defense;
+    public float Defense;
     public bool onGuard;
     public bool onHit;
 
@@ -35,6 +35,7 @@ public class PlayerGuard : MonoBehaviour
         weap = GameObject.Find("WeaponA").GetComponent<Animator>();
         pm = GameObject.Find("DonJuan");
         QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
+        Defense = GetComponentInChildren<permstatdef>().permdef;
     }
 
     // Update is called once per frame
@@ -84,7 +85,6 @@ public class PlayerGuard : MonoBehaviour
         chance = UnityEngine.Random.Range(1, 100);
         chance = (chance / 100);
         var text = chance.ToString();
-        Debug.Log(text);
         if (chance <= 0.20f)
         {
             QTR.QTRSTART = true;

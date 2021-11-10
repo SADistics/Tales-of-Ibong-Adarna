@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class PlayerAttack : MonoBehaviour
 {
     #region Stats
-    public Stats Strength;
+    public float Strength;
     private Animator anim;
+    public permstatstr permstatstr;
     #endregion
 
     #region EnemyAttrib
@@ -51,6 +52,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
+        Strength = permstatstr.permstr;
         skillCoolDown = 5f;
         skillCoolDown2 = 10f;
         isAttack = false;
@@ -184,7 +186,7 @@ public class PlayerAttack : MonoBehaviour
         if (enemy != null)
         {
             if (enemStats.GetHealth() > 0)
-                enemStats.Health -= ((Strength.GetStats()+thrust)-enemStats.GetEnemyDefense());
+                enemStats.Health -= ((Strength+thrust)-enemStats.GetEnemyDefense());
             else
             {
                 enemStats.Health -= 0;
@@ -203,7 +205,7 @@ public class PlayerAttack : MonoBehaviour
         if (enemy != null)
         {
             if (enemStats.GetHealth() > 0)
-                enemStats.Health -= ((Strength.GetStats() + thrust + 50) - enemStats.GetEnemyDefense());
+                enemStats.Health -= ((Strength + thrust + 50) - enemStats.GetEnemyDefense());
             else
             {
                 enemStats.Health -= 0;
@@ -223,22 +225,22 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator Skill1At()
     {
         currentCoolDown = 0;
-        GetComponent<PlayerMovement>().speed += 10;
+        GetComponent<PlayerMovement>().Agility += 5;
         yield return null;
         skill1Ready = false;
-        if (enemy != null)
+        /*if (enemy != null)
         {
             if (enemStats.GetHealth() > 0)
             {
-                enemStats.Health -= ((Strength.GetStats() + 10) - enemStats.GetEnemyDefense());
+                enemStats.Health -= ((Strength + 10) - enemStats.GetEnemyDefense());
             }
             else
             {
                 enemStats.Health -= 0;
             }
-        }
+        }*/
         yield return new WaitForSeconds(2f);
-        GetComponent<PlayerMovement>().speed -= 10;
+        GetComponent<PlayerMovement>().speed -= 5;
     }
     private IEnumerator Skill2At()
     {
@@ -252,7 +254,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (enemStats.GetHealth() > 0)
             {
-                enemStats.Health -= ((Strength.GetStats() + 15) - enemStats.GetEnemyDefense());
+                enemStats.Health -= ((Strength + 15) - enemStats.GetEnemyDefense());
             }
             else
             {

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainStory : MonoBehaviour
 {
-    bool noEnemy;
     void Start()
     {
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Tutorial1"))

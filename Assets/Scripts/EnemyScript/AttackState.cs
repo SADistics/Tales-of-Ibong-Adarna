@@ -25,6 +25,11 @@ public class AttackState : State
     private GameObject playerObject;
     public float knockTime;
 
+    #region UndeadStats
+    float chance;
+    bool isSlowed;
+    #endregion
+
     private void Start()
     {
         waitTime = startWaitTime;
@@ -46,19 +51,29 @@ public class AttackState : State
             {
                 enemyAnim.SetBool("isAttacked", true);
                 enemyAnim.SetBool("isWalking", false);
+                if (enemyStats.type == "Undead" && !isSlowed)
+                {
+                    chance = UnityEngine.Random.Range(1, 10);
+                    chance = chance / 10;
+                    StartCoroutine(Slowed());
+                    /*if (chance <= 0.20f)
+                    {
+                        StartCoroutine(Slowed());
+                    }*/
+                }
                 if(playerGuard.onGuard && !playerGuard.onHit)
                 {
                     playerGuard.onHit = true;
                 }
                 else if (playerGuard.onHit && playerGuard.onGuard)
                 {
-                    playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense.GetStats()) - enemyStats.GetEnemyStrength();
+                    playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense) - enemyStats.GetEnemyStrength();
                     playerHealth.SetHealthBarValue(playerHealth.curHP);
                     playerObject.GetComponent<Animator>().SetTrigger("onHit");
                 }
                 else
                 {
-                    playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense.GetStats()) - enemyStats.GetEnemyStrength();
+                    playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense) - enemyStats.GetEnemyStrength();
                     playerHealth.SetHealthBarValue(playerHealth.curHP);
                     playerObject.GetComponent<Animator>().SetTrigger("onHit");
                 }
@@ -108,12 +123,19 @@ public class AttackState : State
         }
     }
 
+    private IEnumerator Slowed()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Agility -= 5;
+        yield return new WaitForSeconds(2f);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Agility += 5;
+    }
 
     private IEnumerator KnockCo(Rigidbody player)
     {
         if(player != null)
         {
             yield return new WaitForSeconds(knockTime);
+            isSlowed = false;
             player.velocity = Vector3.zero;
             player.isKinematic = true;
         }

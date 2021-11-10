@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Stats Health;
+    public float Health;
     public static Image HealthBarImage;
     public bool isDead;
     public float curHP;
@@ -43,9 +44,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        Health = GetComponentInChildren<permstatdef>().permdef;
         HealthBarImage = GameObject.Find("HealthBarFiller").GetComponent<Image>();
         SetHealthBarValue(1);
-        maxHP = Health.GetStats();
+        maxHP = Health+100;
         curHP = maxHP;
         animator = GetComponent<Animator>();
         isDead = false;
@@ -69,7 +71,14 @@ public class PlayerHealth : MonoBehaviour
                 GetComponent<Transform>().position.y - 0.4f,
                 GetComponent<Transform>().position.z
                 );
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            StartCoroutine(GameOverHead());
+            
         }
+    }
+
+    private IEnumerator GameOverHead()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 }

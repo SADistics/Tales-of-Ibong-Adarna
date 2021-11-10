@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     public GameObject weap;
     [SerializeField]public float speed;
-    public Stats Agility;
+    public float Agility;
 
     float xMove,xPos,zMove, distToGround;
 
@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        speed = Agility.GetStats();
+        Agility = GetComponentInChildren<permstatagi>().permagi;
+        speed = Agility;
         distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         //Horizontal
         if (Input.GetKey(KeyCode.A))
         {
-            xMove = 1*-speed;
+            xMove = 1*-Agility;
             anim.SetFloat("Xpos", -1);
             anim.SetBool("IsMove", true);
             weap.GetComponent<Animator>().SetBool("isLeft",true);
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            xMove = 1*speed;
+            xMove = 1*Agility;
             anim.SetFloat("Xpos", 1);
             anim.SetBool("IsMove", true);
             weap.GetComponent<Animator>().SetBool("isLeft", false);
@@ -68,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         //Vertical
         if (Input.GetKey(KeyCode.S))
         {
-            zMove = 1*-speed;
+            zMove = 1*-Agility;
             anim.SetFloat("Xpos", -1);
             anim.SetBool("IsMove", true);
             xPos = -1f;
@@ -81,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            zMove = 1*speed;
+            zMove = 1*Agility;
             anim.SetFloat("Xpos", 1);
             anim.SetBool("IsMove",true);
             xPos = 1f;
