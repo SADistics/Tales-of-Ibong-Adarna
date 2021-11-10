@@ -15,6 +15,10 @@ public class EnemyCount : MonoBehaviour
     public void DecreaseEnemy()
     {
         enemyCount -= 1;
+        if (enemyCount <= 0)
+        {
+            enemyCount = 0;
+        }
         enemyCountText.text = enemyCount.ToString();
     }
 }

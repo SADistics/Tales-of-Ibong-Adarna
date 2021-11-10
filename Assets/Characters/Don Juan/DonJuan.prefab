@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1698558182011446381}
   - component: {fileID: 2922133666031726452}
   - component: {fileID: 5639069427664580315}
+  - component: {fileID: 3857619620178500805}
   m_Layer: 0
   m_Name: DonJuan
   m_TagString: Player
@@ -37,6 +38,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4788147298196832815}
+  - {fileID: 8770030774131739042}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -165,19 +167,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d8ecf782d28144692f96e461154464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Strength:
-    baseStats: 5
+  Strength: 0
   isBow: 0
   isBronze: 0
   isSilver: 0
   isBlood: 0
   currWeap: {fileID: 0}
-  thrust: 100
+  thrust: 0
   skillImage1: {fileID: 0}
   skillImage2: {fileID: 0}
   skillCoolDown: 0
   skillCoolDown2: 0
-  weaponAnim: {fileID: 1374051871040027087}
+  weaponAnim: {fileID: 0}
+  QTR: {fileID: 0}
 --- !u!114 &1698558182011446381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weap: {fileID: 4010806019412443860}
   speed: 0
-  Agility:
-    baseStats: 5
+  Agility: 0
 --- !u!114 &2922133666031726452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,8 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd8aea9a32e5d44e8fd93c284b3aab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health:
-    baseStats: 100
+  Health: 0
   isDead: 0
   curHP: 0
   isSpotted: 0
@@ -223,10 +223,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f9292880c504b4d80b0be1d2c2ea2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Defense:
-    baseStats: 0
+  Defense: 0
   onGuard: 0
   onHit: 0
+  QTR: {fileID: 0}
+--- !u!114 &3857619620178500805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698558182011446376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc733a40d371a5409a751f391771709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiLevelText: {fileID: 0}
+  EXPText: {fileID: 0}
+  ExpBar: {fileID: 0}
+--- !u!1 &3430481238278578222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8770030774131739042}
+  - component: {fileID: 8219599971063238947}
+  - component: {fileID: 372288164294126530}
+  - component: {fileID: 1706135407264199362}
+  - component: {fileID: 6402020295549546536}
+  - component: {fileID: 7280939157645479191}
+  - component: {fileID: 7397335081824625373}
+  m_Layer: 0
+  m_Name: PlayerStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8770030774131739042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1698558182011446380}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8219599971063238947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7dbead2bb970b945850da209c222248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 0}
+  agistat: 5
+  Points: {fileID: 0}
+--- !u!114 &372288164294126530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca743ce01463a245b010d2fb3ce18e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 0}
+  defstat: 5
+  Points: {fileID: 0}
+--- !u!114 &1706135407264199362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac2cb8a3b62934885f702304b93ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 0}
+  dexstat: 5
+  Points: {fileID: 0}
+--- !u!114 &6402020295549546536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037653664dc5b5346a7da603041a5087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 0}
+  intstat: 5
+  Points: {fileID: 0}
+--- !u!114 &7280939157645479191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a446a4613aef8c4facae79c8618886d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 0}
+  luckstat: 5
+  Points: {fileID: 0}
+--- !u!114 &7397335081824625373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d6d575fb1a3f74d8da1126ae86c643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 0}
+  strstat: 5
+  Points: {fileID: 0}
 --- !u!1 &4010806019412443860
 GameObject:
   m_ObjectHideFlags: 0

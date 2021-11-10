@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class skillavailablepoints : MonoBehaviour
 {
     public Text val;
@@ -15,7 +16,7 @@ public class skillavailablepoints : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         asstat = sstat;
         val.text = asstat.ToString();

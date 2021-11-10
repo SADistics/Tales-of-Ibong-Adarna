@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,13 +19,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        Agility = GetComponentInChildren<permstatagi>().permagi;
-        speed = Agility;
         distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     void Update()
     {
+        Agility = GameObject.Find("PlayerStats").GetComponent<permstatagi>().get();
         if (!VD.isActive && !GetComponent<PlayerHealth>().isDead)
         {
             Movement();
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         //Horizontal
         if (Input.GetKey(KeyCode.A))
         {
-            xMove = 1*-Agility;
+            xMove = 1*-Agility-speed;
             anim.SetFloat("Xpos", -1);
             anim.SetBool("IsMove", true);
             weap.GetComponent<Animator>().SetBool("isLeft",true);
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            xMove = 1*Agility;
+            xMove = 1*Agility+speed;
             anim.SetFloat("Xpos", 1);
             anim.SetBool("IsMove", true);
             weap.GetComponent<Animator>().SetBool("isLeft", false);
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         //Vertical
         if (Input.GetKey(KeyCode.S))
         {
-            zMove = 1*-Agility;
+            zMove = 1*-Agility-speed;
             anim.SetFloat("Xpos", -1);
             anim.SetBool("IsMove", true);
             xPos = -1f;
@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            zMove = 1*Agility;
+            zMove = 1*Agility+speed;
             anim.SetFloat("Xpos", 1);
             anim.SetBool("IsMove",true);
             xPos = 1f;

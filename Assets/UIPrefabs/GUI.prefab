@@ -1872,6 +1872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBarFiller
       objectReference: {fileID: 0}
+    - target: {fileID: 1436315737915968, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
+      propertyPath: m_Name
+      value: LVLText
+      objectReference: {fileID: 0}
     - target: {fileID: 1665593283481074, guid: 4d60074dd110e4fdda7cd238bb49b116, type: 3}
       propertyPath: m_Name
       value: Bar_9
@@ -2270,6 +2274,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4045952819714709733, guid: 1366a9c9348f0514482a206dffa4cf38, type: 3}
+      propertyPath: m_Name
+      value: EXPText
+      objectReference: {fileID: 0}
     - target: {fileID: 4045952819727462319, guid: 1366a9c9348f0514482a206dffa4cf38, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -2333,6 +2341,10 @@ PrefabInstance:
     - target: {fileID: 4045952820196620086, guid: 1366a9c9348f0514482a206dffa4cf38, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045952820216583337, guid: 1366a9c9348f0514482a206dffa4cf38, type: 3}
+      propertyPath: m_Name
+      value: EXPFiller
       objectReference: {fileID: 0}
     - target: {fileID: 4045952820488191092, guid: 1366a9c9348f0514482a206dffa4cf38, type: 3}
       propertyPath: m_Color.a

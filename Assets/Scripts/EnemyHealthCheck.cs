@@ -16,6 +16,7 @@ public class EnemyHealthCheck : MonoBehaviour
 
     EnemySpawnManager esm;
     public EnemyCount enemyCount;
+    public LevelSystem levelSystem;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class EnemyHealthCheck : MonoBehaviour
         enemyStats = enemyMain.GetComponentInChildren<EnemyStats>();
         totalHealth = enemyStats.GetHealth();
         enemyCount = GameObject.Find("EnemyManager").GetComponent<EnemyCount>();
+        levelSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>();
     }
     void Update()
     {
@@ -30,20 +32,41 @@ public class EnemyHealthCheck : MonoBehaviour
         if (enemyStats.GetHealth() <= 0)
         {
             hpBar.text = "HP: " + 0 + "/" + totalHealth;
-            //enemyAnim.GetComponent<Transform>().position = new Vector3(enemyAnim.GetComponent<Transform>().position.x, enemyAnim.GetComponent<Transform>().position.y - 0.5f, enemyAnim.GetComponent<Transform>().position.z);
             enemyMain.GetComponent<AIPath>().canMove = false;
             enemyMain.GetComponent<StateManager>().enabled = false;
-            /*enemyMain.GetComponentInChildren<Rigidbody>().detectCollisions = false;
-            enemyMain.GetComponentInChildren<Rigidbody>().useGravity = false;*/
             StartCoroutine(DeathCo());
         }
     }
 
     private IEnumerator DeathCo()
     {
-        enemyAnim.SetBool("isDead", true);        
+        enemyAnim.SetBool("isDead", true);
         yield return new WaitForSeconds(10);
-        GameObject.Destroy(enemyMain);
-        enemyCount.DecreaseEnemy();
+        if (SideQuestChecker())
+        {
+            levelSystem.AddExperience(enemyStats.exp);
+            GameObject.Destroy(enemyMain);
+            enemyCount.DecreaseEnemy();
+        }
+        else
+        {
+            levelSystem.AddExperience(enemyStats.exp);
+            GameObject.Destroy(enemyMain);
+            enemyCount.DecreaseEnemy();
+        }
+        
+    }
+
+    private static bool SideQuestChecker()
+    {
+        if (GameObject.Find("SideQuestHolder").GetComponent<RandomSideQuest>().SlimeQuest)
+        {
+            GameObject.FindGameObjectWithTag("Side").GetComponent<QuestProgress>().Count += 1;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

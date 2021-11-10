@@ -44,7 +44,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        Health = GetComponentInChildren<permstatdef>().permdef;
         HealthBarImage = GameObject.Find("HealthBarFiller").GetComponent<Image>();
         SetHealthBarValue(1);
         maxHP = Health+100;
@@ -55,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        Health = GameObject.Find("PlayerStats").GetComponent<permstatdef>().get();
         if (!isDead)
             HealthCheck();
     }

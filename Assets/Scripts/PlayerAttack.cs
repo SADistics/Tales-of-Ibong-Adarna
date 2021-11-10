@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     #region Stats
     public float Strength;
     private Animator anim;
-    public permstatstr permstatstr;
     #endregion
 
     #region EnemyAttrib
@@ -52,11 +51,11 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        Strength = permstatstr.permstr;
         skillCoolDown = 5f;
         skillCoolDown2 = 10f;
         isAttack = false;
         anim = GetComponent<Animator>();
+        weaponAnim = GameObject.Find("WeaponA").GetComponent<Animator>();
         skill1Ready = true; skill2Ready = true;
         if (isBow)
         {
@@ -75,7 +74,6 @@ public class PlayerAttack : MonoBehaviour
             GameObject.Find("Archer2").SetActive(false);
         }
         QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
-
         #region Check Weapon Quality
         /*if (isSilver)
         {
@@ -101,6 +99,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        Strength = GetComponentInChildren<permstatstr>().get();
         if (Input.GetButtonDown("Fire1")&&!isAttack)
         {
             StartCoroutine(AttackCo()); //Animation
@@ -225,7 +224,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator Skill1At()
     {
         currentCoolDown = 0;
-        GetComponent<PlayerMovement>().Agility += 5;
+        GetComponent<PlayerMovement>().speed += 5;
         yield return null;
         skill1Ready = false;
         /*if (enemy != null)

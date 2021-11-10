@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     public float Defense;
     public float Health;
     public string type;
+    public int exp;
 
     public float GetEnemyStrength() => Strength;
 
@@ -19,4 +20,6 @@ public class EnemyStats : MonoBehaviour
     public float GetHealth() => Health;
 
     public string Gettype() => type;
+
+    public int GetEXP() => exp;
 }

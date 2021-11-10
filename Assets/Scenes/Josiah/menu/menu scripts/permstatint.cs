@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class permstatint : MonoBehaviour
 {
     public Text value;
-    public int intstat;
-    public static int permint = 1;
+    public static int permint = 5;
+    public int intstat=permint;
     public GameObject Points;
     private plusandminus availablepoints;
     // Start is called before the first frame update
@@ -38,6 +38,11 @@ public class permstatint : MonoBehaviour
     public void apply()
     {
         permint = intstat;
+    }
+
+    public int get()
+    {
+        return permint;
     }
 }
 

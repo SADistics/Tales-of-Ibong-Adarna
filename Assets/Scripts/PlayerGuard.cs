@@ -35,7 +35,7 @@ public class PlayerGuard : MonoBehaviour
         weap = GameObject.Find("WeaponA").GetComponent<Animator>();
         pm = GameObject.Find("DonJuan");
         QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
-        Defense = GetComponentInChildren<permstatdef>().permdef;
+        Defense = GetComponentInChildren<permstatdef>().defstat;
     }
 
     // Update is called once per frame

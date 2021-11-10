@@ -184,6 +184,7 @@ public class DialogueManager : MonoBehaviour
     //Called automatically because we subscribed to the OnEnd event
     void EndDialogue(VD.NodeData data)
     {
+        CheckTasks();
         VD.OnActionNode -= ActionHandler;
         VD.OnNodeChange -= UpdateUI;
         VD.OnEnd -= EndDialogue;
@@ -197,6 +198,7 @@ public class DialogueManager : MonoBehaviour
     {
         //If the script gets destroyed, let's make sure we force-end the dialogue to prevent errors
         //We do not save changes
+        CheckTasks();
         VD.OnActionNode -= ActionHandler;
         VD.OnNodeChange -= UpdateUI;
         VD.OnEnd -= EndDialogue;
@@ -253,6 +255,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (data.comments[data.commentIndex].Contains("[NAME]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
+    }
+
+    void CheckTasks()
+    {
+        QuestChartDemo.CheckTaskCompletion(VD.nodeData);
     }
 
     #endregion

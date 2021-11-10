@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class permstatluck : MonoBehaviour
 {
     public Text value;
-    public int luckstat;
-    public static int permluck = 1;
+    public static int permluck = 5;
+    public int luckstat=permluck;
     public GameObject Points;
     private plusandminus availablepoints;
     // Start is called before the first frame update
@@ -38,5 +38,10 @@ public class permstatluck : MonoBehaviour
     public void apply()
     {
         permluck = luckstat;
+    }
+
+    public int get()
+    {
+        return permluck;
     }
 }

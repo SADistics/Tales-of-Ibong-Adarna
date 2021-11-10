@@ -449,6 +449,7 @@ MonoBehaviour:
   enemyMain: {fileID: 4694430022029173660}
   hpBar: {fileID: 298893258577961837}
   enemyCount: {fileID: 0}
+  levelSystem: {fileID: 0}
 --- !u!222 &3313834508826126980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -595,6 +596,8 @@ MonoBehaviour:
   Agility: 2
   Defense: 2
   Health: 100
+  type: 
+  exp: 20
 --- !u!1 &4694430023535166931
 GameObject:
   m_ObjectHideFlags: 0
