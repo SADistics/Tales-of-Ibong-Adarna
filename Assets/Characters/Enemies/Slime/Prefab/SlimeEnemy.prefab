@@ -287,7 +287,7 @@ MonoBehaviour:
   aiPath: {fileID: 4694430022029173634}
   enemyAnim: {fileID: 4694430023535166932}
   enemyStats: {fileID: 4694430022907871680}
-  startWaitTime: 5
+  startWaitTime: 8
   isAttacked: 0
   thrust: 10
   player: {fileID: 0}
@@ -448,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMain: {fileID: 4694430022029173660}
   hpBar: {fileID: 298893258577961837}
+  enemyCount: {fileID: 0}
 --- !u!222 &3313834508826126980
 CanvasRenderer:
   m_ObjectHideFlags: 0

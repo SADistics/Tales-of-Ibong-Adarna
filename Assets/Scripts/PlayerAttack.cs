@@ -45,6 +45,10 @@ public class PlayerAttack : MonoBehaviour
     public Animator weaponAnim;
     #endregion
 
+    #region Quick Time Event
+    public QTESys QTR;
+    #endregion
+
     void Start()
     {
         skillCoolDown = 5f;
@@ -68,6 +72,7 @@ public class PlayerAttack : MonoBehaviour
             GameObject.Find("Archer1").SetActive(false);
             GameObject.Find("Archer2").SetActive(false);
         }
+        QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
 
         #region Check Weapon Quality
         /*if (isSilver)
@@ -125,6 +130,17 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
+        if (QTR.correctKey == 1 && !isAttack)
+        {
+            StartCoroutine(AttackCo2());
+            if (isinRange)
+            {
+                if (enemy != null)
+                {
+                    StartCoroutine(KnockCo(enemy));
+                }
+            }
+        }
 
         if (enem == null && !GetComponent<PlayerHealth>().isDead)
         {
@@ -158,7 +174,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     #region IEnumerators
-    private IEnumerator AttackCo()
+    public IEnumerator AttackCo()
     {
         isAttack = true;
         anim.SetBool("attacking", true);
@@ -169,6 +185,25 @@ public class PlayerAttack : MonoBehaviour
         {
             if (enemStats.GetHealth() > 0)
                 enemStats.Health -= ((Strength.GetStats()+thrust)-enemStats.GetEnemyDefense());
+            else
+            {
+                enemStats.Health -= 0;
+            }
+        }
+        yield return new WaitForSeconds(1);
+        isAttack = false;
+    }
+    public IEnumerator AttackCo2()
+    {
+        isAttack = true;
+        anim.SetBool("attacking", true);
+        weaponAnim.SetTrigger("Attack");
+        yield return null;
+        anim.SetBool("attacking", false);
+        if (enemy != null)
+        {
+            if (enemStats.GetHealth() > 0)
+                enemStats.Health -= ((Strength.GetStats() + thrust + 50) - enemStats.GetEnemyDefense());
             else
             {
                 enemStats.Health -= 0;

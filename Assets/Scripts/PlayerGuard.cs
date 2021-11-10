@@ -18,6 +18,10 @@ public class PlayerGuard : MonoBehaviour
     private GameObject guardPrompt;
     private Animator weap;
     private GameObject pm;
+
+    public QTESys QTR;
+    private bool isQTE;
+    float chance;
     void Start()
     {
         onGuard = false;
@@ -30,6 +34,7 @@ public class PlayerGuard : MonoBehaviour
         guardPrompt.SetActive(false);
         weap = GameObject.Find("WeaponA").GetComponent<Animator>();
         pm = GameObject.Find("DonJuan");
+        QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
     }
 
     // Update is called once per frame
@@ -51,6 +56,10 @@ public class PlayerGuard : MonoBehaviour
 
         if (onHit && onGuard || onHit && !onGuard)
         {
+            if (!isQTE)
+            {
+                QTECheck();
+            }
             shieldCont.SetActive(true);
             if (currCD < maxCD)
             {
@@ -63,6 +72,28 @@ public class PlayerGuard : MonoBehaviour
                 currCD = 0;
                 shieldCont.SetActive(false);
             }
+        }
+        else if (!onHit)
+        {
+            isQTE = false;
+        }
+    }
+
+    private void QTECheck()
+    {
+        chance = UnityEngine.Random.Range(1, 100);
+        chance = (chance / 100);
+        var text = chance.ToString();
+        Debug.Log(text);
+        if (chance <= 0.20f)
+        {
+            QTR.QTRSTART = true;
+            isQTE = true;
+        }
+        else
+        {
+            QTR.QTRSTART = false;
+            isQTE = true;
         }
     }
 }
