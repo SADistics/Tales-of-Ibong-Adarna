@@ -205,7 +205,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4694430021777620892
 GameObject:
@@ -287,7 +287,7 @@ MonoBehaviour:
   aiPath: {fileID: 4694430022029173634}
   enemyAnim: {fileID: 4694430023535166932}
   enemyStats: {fileID: 4694430022907871680}
-  startWaitTime: 5
+  startWaitTime: 8
   isAttacked: 0
   thrust: 10
   player: {fileID: 0}
@@ -448,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMain: {fileID: 4694430022029173660}
   hpBar: {fileID: 298893258577961837}
+  enemyCount: {fileID: 0}
 --- !u!222 &3313834508826126980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -559,7 +560,7 @@ GameObject:
   - component: {fileID: 4694430022907871680}
   m_Layer: 0
   m_Name: EnemyStats
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,7 +609,7 @@ GameObject:
   - component: {fileID: 4694430023535166933}
   m_Layer: 0
   m_Name: SlimeGFX
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

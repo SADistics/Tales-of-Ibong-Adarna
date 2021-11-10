@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator anim;
-    [SerializeField]private float speed;
+    public GameObject weap;
+    [SerializeField]public float speed;
     public Stats Agility;
 
     float xMove,xPos,zMove, distToGround;
@@ -33,13 +34,15 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         //Horizontal
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             xMove = 1*-speed;
             anim.SetFloat("Xpos", -1);
             anim.SetBool("IsMove", true);
+            weap.GetComponent<Animator>().SetBool("isLeft",true);
             xPos = -1f;
             GetComponent<SpriteRenderer>().flipX = true;
+            weap.GetComponent<SpriteRenderer>().flipX = true;
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
@@ -47,11 +50,12 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("IsMove", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             xMove = 1*speed;
             anim.SetFloat("Xpos", 1);
             anim.SetBool("IsMove", true);
+            weap.GetComponent<Animator>().SetBool("isLeft", false);
             xPos = 1f;
             GetComponent<SpriteRenderer>().flipX = false;
         }
@@ -62,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Vertical
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             zMove = 1*-speed;
             anim.SetFloat("Xpos", -1);
@@ -75,11 +79,11 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("IsMove", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             zMove = 1*speed;
             anim.SetFloat("Xpos", 1);
-            anim.SetBool("IsMove", true);
+            anim.SetBool("IsMove",true);
             xPos = 1f;
         }
         else if (Input.GetKeyUp(KeyCode.W))

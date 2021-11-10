@@ -49,7 +49,7 @@ public class PlayerInteractDialogue : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         interactionPrompt.SetActive(true);
-        if (other.GetComponent<VIDE_Assign>() != null)
+        if (other.GetComponent<VIDE_Assign>() != null && !other.isTrigger)
         {
             inTrigger = other.GetComponent<VIDE_Assign>();
             interactionPromptText.text = "Press 'Space' to interact with " + inTrigger.alias;
@@ -59,8 +59,11 @@ public class PlayerInteractDialogue : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        inTrigger = null;
-        interactionPrompt.SetActive(false);
-        interactionPromptText.text = "";
+        if (other.GetComponent<VIDE_Assign>() != null && !other.isTrigger)
+        {
+            inTrigger = null;
+            interactionPrompt.SetActive(false);
+            interactionPromptText.text = "";
+        } 
     }
 }

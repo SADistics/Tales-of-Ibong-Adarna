@@ -34,7 +34,7 @@ public class ChaseState : State
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
             if (!other.GetComponent<PlayerHealth>().isDead||
                     !other.GetComponent<PlayerHealth>().isSpotted)
