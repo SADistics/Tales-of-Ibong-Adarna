@@ -32,6 +32,35 @@ public class QuestProgress : MonoBehaviour
             isTrue = true;
             GetComponent<RandomSideQuest>().SlimeQuest = false;
             sqPrompt.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>().AddExperience(200);
+            GetComponent<RandomSideQuest>().isSide = false;
+            StartCoroutine(VanishCO());
+        }
+        if (Count == 5 && GetComponent<RandomSideQuest>().GoblinQuest)
+        {
+            isTrue = true;
+            GetComponent<RandomSideQuest>().GoblinQuest = false;
+            sqPrompt.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>().AddExperience(200);
+            GetComponent<RandomSideQuest>().isSide = false;
+            StartCoroutine(VanishCO());
+        }
+        if (Count == 5 && GetComponent<RandomSideQuest>().ZombieQuest)
+        {
+            isTrue = true;
+            GetComponent<RandomSideQuest>().ZombieQuest = false;
+            sqPrompt.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>().AddExperience(200);
+            GetComponent<RandomSideQuest>().isSide = false;
+            StartCoroutine(VanishCO());
+        }
+        if (Count == 5 && GetComponent<RandomSideQuest>().GhostQuest)
+        {
+            isTrue = true;
+            GetComponent<RandomSideQuest>().GhostQuest = false;
+            sqPrompt.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>().AddExperience(200);
+            GetComponent<RandomSideQuest>().isSide = false;
             StartCoroutine(VanishCO());
         }
     }

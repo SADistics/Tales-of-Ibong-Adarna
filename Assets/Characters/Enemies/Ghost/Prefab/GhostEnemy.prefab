@@ -417,6 +417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMain: {fileID: 2897088594601775476}
   hpBar: {fileID: 8206274441773930832}
+  enemyCount: {fileID: 0}
+  levelSystem: {fileID: 0}
 --- !u!136 &5023858002439259389
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -552,10 +554,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd56f4e7bb0a2e42988b0523b29a40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 0
   Strength: 10
   Agility: 5
   Defense: 2
   Health: 100
+  type: 
+  exp: 40
 --- !u!1 &2897088595397871607
 GameObject:
   m_ObjectHideFlags: 0

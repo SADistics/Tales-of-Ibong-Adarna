@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActivateMen : MonoBehaviour
 {
-    public GameObject Menu;
+    public Canvas Menu;
     public bool yes = true;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Menu = GameObject.Find("Player menu").GetComponent<Canvas>();
+        Menu.enabled = false;
     }
 
     // Update is called once per frame
@@ -17,11 +20,11 @@ public class ActivateMen : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Menu.SetActive(true);
+            Menu.enabled = true;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Menu.SetActive(false);
+            Menu.enabled = false;
         }
 
     }

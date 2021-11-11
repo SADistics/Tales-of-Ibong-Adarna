@@ -16,11 +16,14 @@ public class LevelSystem : MonoBehaviour
     private int experience;
     private int experienceToNextLevel;
 
+    public AvailableStatPoints availableStat;
+
     private void Awake()
     {
         EXPText = GameObject.Find("EXPText").GetComponent<Text>();
         uiLevelText = GameObject.Find("LVLText").GetComponent<Text>();
         ExpBar = GameObject.Find("EXPFiller").GetComponent<Image>();
+        availableStat = GameObject.FindGameObjectWithTag("Stat").GetComponent<AvailableStatPoints>();
         if (instance != null)
         {
             Debug.Log("More than one LevelSystem in scene!");
@@ -32,6 +35,11 @@ public class LevelSystem : MonoBehaviour
         SetLevel(permLevel);
     }
 
+    void Update()
+    {
+        ExpBar.fillAmount = experience / experienceToNextLevel;
+    }
+
     public bool AddExperience(int experienceToAdd)
     {
         experience += experienceToAdd;
@@ -39,6 +47,7 @@ public class LevelSystem : MonoBehaviour
         if (experience >= experienceToNextLevel)
         {
             SetLevel(level + 1);
+            availableStat.AStatAdd(3);
             return true;
         }
 
@@ -60,5 +69,10 @@ public class LevelSystem : MonoBehaviour
         ExpBar.fillAmount = experience / experienceToNextLevel;
         EXPText.text = experience.ToString() + " / " + experienceToNextLevel.ToString();
         uiLevelText.text = permLevel.ToString();
+    }
+
+    public int GetLVL()
+    {
+        return permLevel;
     }
 }

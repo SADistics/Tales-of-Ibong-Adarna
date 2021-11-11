@@ -55,4 +55,14 @@ False
 #COMMENT#
 Farewell, Prince!
 ---------------------------------
+#NODEID#
+4
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Forgive me, Prince. I am still stocking up on my shop.
+---------------------------------
 #END#

@@ -25,7 +25,7 @@ public class AvailableStatPoints : MonoBehaviour
     void Start()
     {
         val = GetComponent<Text>();
-        astat = 99;
+        astat = avstat;
         availablepoints = points.GetComponent<plusandminus>();
         availablepoints1 = points1.GetComponent<plusandminus>();
         availablepoints2 = points2.GetComponent<plusandminus>();
@@ -98,9 +98,11 @@ public class AvailableStatPoints : MonoBehaviour
             astat++;
         }
         
-    }
-
- 
+    } 
     
+    public void AStatAdd(int value)
+    {
+        astat += value;
+    }
 
 }

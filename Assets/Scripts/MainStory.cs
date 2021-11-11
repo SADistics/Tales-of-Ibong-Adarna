@@ -51,7 +51,7 @@ public class MainStory : MonoBehaviour
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 8"))
                 SceneManager.LoadScene("Chapter 9", LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 9"))
-                SceneManager.LoadScene("Titlescreen", LoadSceneMode.Single);
+                SceneManager.LoadScene("Stage_Town_1", LoadSceneMode.Single);
         }
     }
 

@@ -96,17 +96,33 @@ False
 Take your time..
 ---------------------------------
 #NODEID#
+8
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Farewell, Prince!
+---------------------------------
+#NODEID#
+10
+#TAG#
+
+#ISPLAYER#
+False
+---
+#COMMENT#
+Forgive me, Prince. That is not available yet.
+---------------------------------
+#NODEID#
 7
 #TAG#
 
 #ISPLAYER#
-True
+False
 ---
 #COMMENT#
-Sword
-#COMMENT#
-Bow
-#COMMENT#
-I change my mind...
+Forgive me, Prince. That is not available yet.
 ---------------------------------
 #END#
