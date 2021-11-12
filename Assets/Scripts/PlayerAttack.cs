@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
 {
     #region Stats
     public float Strength;
+    public float Luck;
     private Animator anim;
     #endregion
 
@@ -48,6 +49,8 @@ public class PlayerAttack : MonoBehaviour
     #region Quick Time Event
     public QTESys QTR;
     #endregion
+
+    float random;
 
     void Start()
     {
@@ -100,6 +103,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         Strength = GetComponentInChildren<permstatstr>().get();
+        Luck = GetComponentInChildren<permstatluck>().get();
         if (Input.GetButtonDown("Fire1")&&!isAttack)
         {
             StartCoroutine(AttackCo()); //Animation
@@ -184,8 +188,13 @@ public class PlayerAttack : MonoBehaviour
         anim.SetBool("attacking", false);
         if (enemy != null)
         {
+            random = UnityEngine.Random.Range(1, 99);
+            if(random < Luck && enemStats.GetHealth() > 0)
+            {
+                enemStats.Health -=((Strength+thrust)*1.5f);
+            }
             if (enemStats.GetHealth() > 0)
-                enemStats.Health -= ((Strength+thrust)-enemStats.GetEnemyDefense());
+                enemStats.Health -=((Strength+thrust)-enemStats.GetEnemyDefense());
             else
             {
                 enemStats.Health -= 0;

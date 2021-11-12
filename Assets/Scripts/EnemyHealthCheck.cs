@@ -41,7 +41,7 @@ public class EnemyHealthCheck : MonoBehaviour
     private IEnumerator DeathCo()
     {
         enemyAnim.SetBool("isDead", true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(2);
         if (SideQuestChecker())
         {
             levelSystem.AddExperience(enemyStats.exp);
@@ -54,7 +54,11 @@ public class EnemyHealthCheck : MonoBehaviour
             GameObject.Destroy(enemyMain);
             enemyCount.DecreaseEnemy();
         }
-        
+        /* #region DEBUG
+         levelSystem.AddExperience(enemyStats.exp);
+         GameObject.Destroy(enemyMain);
+         enemyCount.DecreaseEnemy();
+         #endregion*/
     }
 
     private static bool SideQuestChecker()

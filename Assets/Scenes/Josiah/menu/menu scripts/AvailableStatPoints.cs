@@ -105,4 +105,9 @@ public class AvailableStatPoints : MonoBehaviour
         astat += value;
     }
 
+    public int Get()
+    {
+        return avstat;
+    }
+
 }

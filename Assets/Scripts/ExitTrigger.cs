@@ -8,15 +8,17 @@ public class ExitTrigger : MonoBehaviour
 {
     EnemySpawnManager esm;
     public EnemyCount ec;
+    public AvailableStatPoints avStats;
 
     void Awake()
     {
         ec = GameObject.Find("EnemyManager").GetComponent<EnemyCount>();
+        avStats = GameObject.FindGameObjectWithTag("Stat").GetComponent<AvailableStatPoints>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && ec.enemyCount==0) //if enemy count is 0
+        if (other.CompareTag("Player") && ec.enemyCount == 0 && avStats.Get() == 0) //if enemy count is 0
         {
             LoadLevel();
         }
@@ -24,7 +26,7 @@ public class ExitTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && ec.enemyCount == 0) //if enemy count is 0
+        if (other.CompareTag("Player") && ec.enemyCount == 0 && avStats.Get() ==0) //if enemy count is 0
         {
             LoadLevel();
         }
@@ -32,7 +34,7 @@ public class ExitTrigger : MonoBehaviour
 
     private void LoadLevel()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_1"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_1")|| SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_Respawn"))
         {
             SceneManager.LoadScene("EntFor1", LoadSceneMode.Single);
         }

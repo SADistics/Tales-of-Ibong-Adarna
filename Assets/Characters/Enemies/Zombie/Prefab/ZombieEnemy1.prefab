@@ -260,7 +260,7 @@ MonoBehaviour:
   aiPath: {fileID: 5675387968740588566}
   enemyAnim: {fileID: 5675387967928198370}
   enemyStats: {fileID: 5675387969121187006}
-  startWaitTime: 5
+  startWaitTime: 6
   isAttacked: 0
   thrust: 5
   player: {fileID: 0}

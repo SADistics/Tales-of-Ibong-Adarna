@@ -19,7 +19,7 @@ public class QTESys : MonoBehaviour
 
     private void Start()
     {
-        QTEInterface.SetActive(false);
+        QTEInterface.GetComponent<Canvas>().enabled=false;
     }
 
     public void Update()
@@ -28,7 +28,7 @@ public class QTESys : MonoBehaviour
         {
             if (waitingForKey == 0)
             {
-                QTEInterface.SetActive(true);
+                QTEInterface.GetComponent<Canvas>().enabled=true;
                 qteGen = Random.Range(1, 4);
                 CountingDown = 1;
                 StartCoroutine(Countdown());
@@ -41,7 +41,7 @@ public class QTESys : MonoBehaviour
                 if (qteGen == 2)
                 {
                     waitingForKey = 2;
-                    DisplayButtons.GetComponent<Text>().text = "[H]";
+                    DisplayButtons.GetComponent<Text>().text = "[V]";
                 }
                 if (qteGen == 3)
                 {
@@ -71,7 +71,7 @@ public class QTESys : MonoBehaviour
             {
                 if (Input.anyKeyDown)
                 {
-                    if (Input.GetKeyDown(KeyCode.H))
+                    if (Input.GetKeyDown(KeyCode.V))
                     {
                         correctKey = 1;
                         StartCoroutine(KeyPressing());
@@ -130,7 +130,7 @@ public class QTESys : MonoBehaviour
             Passbox.GetComponent<Text>().text = "";
             DisplayButtons.GetComponent<Text>().text = "";
             Time.timeScale = 1;
-            QTEInterface.SetActive(false);
+            QTEInterface.GetComponent<Canvas>().enabled = false;
             yield return new WaitForSeconds(1.5f);
             correctKey = 0;
             waitingForKey = 0;
@@ -148,7 +148,7 @@ public class QTESys : MonoBehaviour
             Passbox.GetComponent<Text>().text = "";
             DisplayButtons.GetComponent<Text>().text = "";
             Time.timeScale = 1;
-            QTEInterface.SetActive(false);
+            QTEInterface.GetComponent<Canvas>().enabled = false;
             yield return new WaitForSeconds(1.5f);
             waitingForKey = 0;
             CountingDown = 1;

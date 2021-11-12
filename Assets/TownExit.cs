@@ -9,7 +9,8 @@ public class TownExit : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_1")){
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_1")|| SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_Respawn"))
+            {
                 SceneManager.LoadScene("EntFor1", LoadSceneMode.Single);
             }
         }

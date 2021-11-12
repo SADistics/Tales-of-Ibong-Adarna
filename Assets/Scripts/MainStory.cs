@@ -15,7 +15,7 @@ public class MainStory : MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }    
-        else if (SceneManager.GetActiveScene()== SceneManager.GetSceneByName("Stage_Town_1"))
+        else if (SceneManager.GetActiveScene()== SceneManager.GetSceneByName("Stage_Town_1") || SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_Respawn"))
         {
             this.gameObject.SetActive(true);
         }
@@ -70,6 +70,6 @@ public class MainStory : MonoBehaviour
 
     public void OnClickRetry()
     {
-        SceneManager.LoadScene("Chapter 5.1", LoadSceneMode.Single);
+        SceneManager.LoadScene("Stage_Town_Respawn", LoadSceneMode.Single);
     }
 }

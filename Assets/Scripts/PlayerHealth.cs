@@ -78,7 +78,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator GameOverHead()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 }

@@ -10,6 +10,7 @@ public class LevelSystem : MonoBehaviour
     public Text uiLevelText;
     public Text EXPText;
     public Image ExpBar;
+    public ActivateMen activateMen;
 
     private int level = 0;
     private static int permLevel = 1;
@@ -18,12 +19,16 @@ public class LevelSystem : MonoBehaviour
 
     public AvailableStatPoints availableStat;
 
-    private void Awake()
+    public bool isSet;
+
+    private void Start()
     {
+        isSet = false;
         EXPText = GameObject.Find("EXPText").GetComponent<Text>();
         uiLevelText = GameObject.Find("LVLText").GetComponent<Text>();
         ExpBar = GameObject.Find("EXPFiller").GetComponent<Image>();
         availableStat = GameObject.FindGameObjectWithTag("Stat").GetComponent<AvailableStatPoints>();
+        activateMen = GameObject.FindGameObjectWithTag("Pause").GetComponent<ActivateMen>();
         if (instance != null)
         {
             Debug.Log("More than one LevelSystem in scene!");
@@ -61,6 +66,12 @@ public class LevelSystem : MonoBehaviour
         permLevel = level;
         experience = experience - experienceToNextLevel;
         experienceToNextLevel = (int)(50f * (Mathf.Pow(level + 1, 2) - (5 * (level + 1)) + 8));
+        if (isSet)
+        {
+            activateMen.Menu.GetComponent<Canvas>().enabled = true;
+            Time.timeScale = 0;
+        }
+        isSet = true;
         UpdateVisual();
     }
 
