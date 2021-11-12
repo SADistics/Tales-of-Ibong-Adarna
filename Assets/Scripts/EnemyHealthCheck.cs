@@ -64,6 +64,21 @@ public class EnemyHealthCheck : MonoBehaviour
             GameObject.FindGameObjectWithTag("Side").GetComponent<QuestProgress>().Count += 1;
             return true;
         }
+        else if (GameObject.Find("SideQuestHolder").GetComponent<RandomSideQuest>().GoblinQuest)
+        {
+            GameObject.FindGameObjectWithTag("Side").GetComponent<QuestProgress>().Count += 1;
+            return true;
+        }
+        else if (GameObject.Find("SideQuestHolder").GetComponent<RandomSideQuest>().ZombieQuest)
+        {
+            GameObject.FindGameObjectWithTag("Side").GetComponent<QuestProgress>().Count += 1;
+            return true;
+        }
+        else if (GameObject.Find("SideQuestHolder").GetComponent<RandomSideQuest>().GhostQuest)
+        {
+            GameObject.FindGameObjectWithTag("Side").GetComponent<QuestProgress>().Count += 1;
+            return true;
+        }
         else
         {
             return false;

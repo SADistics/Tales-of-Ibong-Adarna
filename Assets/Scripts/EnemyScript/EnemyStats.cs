@@ -26,10 +26,13 @@ public class EnemyStats : MonoBehaviour
 
     void Awake()
     {
-        Level = GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>().GetLVL();
-        Strength = Strength + (Strength * (Level*0.55f));
-        Agility = Agility + (Agility * (Level * 0.55f));
-        Defense = Defense + (Defense * (Level * 0.55f));
-        Health = Health + (Health * (Level * 0.55f));
+        if(this.GetComponent<EnemyStats>().type != "Boss")
+        {
+            Level = GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>().GetLVL();
+            Strength = Strength + (Strength * (Level * 0.55f));
+            Agility = Agility + (Agility * (Level * 0.55f));
+            Defense = Defense + (Defense * (Level * 0.55f));
+            Health = Health + (Health * (Level * 0.55f));
+        }
     }
 }

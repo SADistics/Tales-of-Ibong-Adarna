@@ -24,14 +24,14 @@ public class MusicScript : MonoBehaviour
         _audioSource.Stop();
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    /*void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ForestBoss"))
         {
-            if (GameObject.Find("Music"))
+            if (GameObject.Find("BossMusic"))
             {
                 Destroy(this);
-                Destroy(GameObject.Find("Music"));
+                Destroy(GameObject.Find("BossMusic"));
             }
             
         }
@@ -70,11 +70,11 @@ public class MusicScript : MonoBehaviour
                 Destroy(this);
                 Destroy(GameObject.Find("ForestMusic"));
             }
-        }*/
+        }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7"))
         {
             Destroy(this);
             Destroy(GameObject.Find("Music"));
         }
-    }
+    }*/
 }

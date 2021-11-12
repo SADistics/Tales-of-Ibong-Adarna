@@ -39,5 +39,11 @@ public class MusicDestroy : MonoBehaviour
         {
             Destroy(this);
         }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameOver"))
+        {
+            Destroy(GameObject.Find("Music"));
+            Destroy(GameObject.Find("ForestMusic"));
+            Destroy(GameObject.Find("BossMusic"));
+        }
     }
 }

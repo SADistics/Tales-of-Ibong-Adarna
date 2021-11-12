@@ -43,7 +43,7 @@ public class MainStory : MonoBehaviour
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 5.1"))
                 SceneManager.LoadScene("Stage_Town_1", LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 6"))
-                SceneManager.LoadScene(4, LoadSceneMode.Single);
+                SceneManager.LoadScene("forest1", LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 Cutscene"))
                 SceneManager.LoadScene("Chapter 7 End", LoadSceneMode.Single);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 End"))
@@ -66,5 +66,10 @@ public class MainStory : MonoBehaviour
                 SceneManager.LoadScene("Chapter 5.1", LoadSceneMode.Single);
             }             
         }
+    }
+
+    public void OnClickRetry()
+    {
+        SceneManager.LoadScene("Chapter 5.1", LoadSceneMode.Single);
     }
 }

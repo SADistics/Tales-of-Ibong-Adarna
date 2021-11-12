@@ -51,7 +51,7 @@ public class ExitTrigger : MonoBehaviour
             SceneManager.LoadScene("ForestBoss", LoadSceneMode.Single);
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ForestBoss"))
-            SceneManager.LoadScene(13, LoadSceneMode.Single);
+            SceneManager.LoadScene("Chapter 7 Cutscene", LoadSceneMode.Single);
 
     }
 }
