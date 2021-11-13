@@ -18,7 +18,7 @@ public class ExitTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && ec.enemyCount == 0 && avStats.Get() == 0) //if enemy count is 0
+        if (other.CompareTag("Player") && ec.enemyCount == 0) //if enemy count is 0
         {
             LoadLevel();
         }
@@ -26,7 +26,7 @@ public class ExitTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && ec.enemyCount == 0 && avStats.Get() ==0) //if enemy count is 0
+        if (other.CompareTag("Player") && ec.enemyCount == 0) //if enemy count is 0
         {
             LoadLevel();
         }

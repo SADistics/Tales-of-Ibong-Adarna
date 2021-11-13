@@ -6,12 +6,13 @@ public class permstatint : MonoBehaviour
 {
     public Text value;
     public static int permint = 5;
-    public int intstat=permint;
+    public int intstat;
     public GameObject Points;
     private plusandminus availablepoints;
     // Start is called before the first frame update
     void Start()
     {
+        intstat = permint;
         value = GetComponent<Text>();
         availablepoints = Points.GetComponent<plusandminus>();
     }

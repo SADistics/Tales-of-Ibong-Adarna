@@ -6,12 +6,13 @@ public class permstatluck : MonoBehaviour
 {
     public Text value;
     public static int permluck = 5;
-    public int luckstat=permluck;
+    public int luckstat;
     public GameObject Points;
     private plusandminus availablepoints;
     // Start is called before the first frame update
     void Start()
     {
+        luckstat = permluck;
         value = GetComponent<Text>();
         availablepoints = Points.GetComponent<plusandminus>();
     }

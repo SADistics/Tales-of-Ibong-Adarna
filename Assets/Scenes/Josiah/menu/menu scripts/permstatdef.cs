@@ -6,12 +6,13 @@ public class permstatdef : MonoBehaviour
 {
     public Text value;
     public static int permdef = 5;
-    public int defstat = permdef;
+    public int defstat;
     public GameObject Points;
     private plusandminus availablepoints;
     // Start is called before the first frame update
     void Start()
     {
+        defstat = permdef;
         value = GetComponent<Text>();
         availablepoints = Points.GetComponent<plusandminus>();
     }

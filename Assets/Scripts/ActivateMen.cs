@@ -25,7 +25,7 @@ public class ActivateMen : MonoBehaviour
             Menu.enabled = true;
             Time.timeScale = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && avStat.Get()==0)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Menu.enabled = false;
             Time.timeScale = 1;

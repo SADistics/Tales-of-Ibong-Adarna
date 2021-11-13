@@ -27,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
 
     #region Knockback
     public float thrust;
+    public float damage;
     #endregion
 
     #region SkillCheck
@@ -194,7 +195,17 @@ public class PlayerAttack : MonoBehaviour
                 enemStats.Health -=((Strength+thrust)*1.5f);
             }
             if (enemStats.GetHealth() > 0)
-                enemStats.Health -=((Strength+thrust)-enemStats.GetEnemyDefense());
+            {
+                damage = ((Strength + thrust) - enemStats.GetEnemyDefense());
+                if (damage >= 0)
+                {
+                    enemStats.Health -= damage;
+                }
+                else
+                {
+                    enemStats.Health -= 1;
+                }
+            }                
             else
             {
                 enemStats.Health -= 0;

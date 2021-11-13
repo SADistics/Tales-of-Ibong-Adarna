@@ -401,7 +401,7 @@ MonoBehaviour:
   Strength: 12
   Agility: 5
   Defense: 5
-  Health: 100
+  Health: 90
   type: 
   exp: 35
 --- !u!1 &5587936776343939221
