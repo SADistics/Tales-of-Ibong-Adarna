@@ -45,4 +45,9 @@ public class permstatagi : MonoBehaviour
     {
         return permagi;
     }
+
+    public void setperm(int newAgi)
+    {
+        permagi = newAgi;
+    }
 }

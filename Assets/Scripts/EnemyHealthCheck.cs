@@ -22,16 +22,16 @@ public class EnemyHealthCheck : MonoBehaviour
     {
         enemyAnim = enemyMain.GetComponentInChildren<Animator>();
         enemyStats = enemyMain.GetComponentInChildren<EnemyStats>();
-        totalHealth = enemyStats.GetHealth();
+        totalHealth = enemyStats.Health;
         enemyCount = GameObject.Find("EnemyManager").GetComponent<EnemyCount>();
         levelSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>();
     }
     void Update()
     {
-        hpBar.text = "HP: " + enemyStats.GetHealth() + "/" + totalHealth;
+        hpBar.text = "HP: " + (int)enemyStats.GetHealth() + "/" + (int)totalHealth;
         if (enemyStats.GetHealth() <= 0)
         {
-            hpBar.text = "HP: " + 0 + "/" + totalHealth;
+            hpBar.text = "HP: " + 0 + "/" + (int)totalHealth;
             enemyMain.GetComponent<AIPath>().canMove = false;
             enemyMain.GetComponent<StateManager>().enabled = false;
             StartCoroutine(DeathCo());

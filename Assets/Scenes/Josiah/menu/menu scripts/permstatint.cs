@@ -45,5 +45,10 @@ public class permstatint : MonoBehaviour
     {
         return permint;
     }
+
+    public void setperm(int newVal)
+    {
+        permint = newVal;
+    }
 }
 

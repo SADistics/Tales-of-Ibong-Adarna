@@ -45,4 +45,8 @@ public class permstatluck : MonoBehaviour
     {
         return permluck;
     }
+    public void setperm(int newVal)
+    {
+        permluck = newVal;
+    }
 }

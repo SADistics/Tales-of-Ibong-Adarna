@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2922133666031726452}
   - component: {fileID: 5639069427664580315}
   - component: {fileID: 3857619620178500805}
+  - component: {fileID: 2589521263350912704}
   m_Layer: 0
   m_Name: DonJuan
   m_TagString: Player
@@ -247,6 +248,24 @@ MonoBehaviour:
   activateMen: {fileID: 0}
   availableStat: {fileID: 0}
   isSet: 0
+--- !u!114 &2589521263350912704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698558182011446376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6609efd9b0a1ba438743a8d850e2438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLevel: {fileID: 0}
+  playerStat: {fileID: 0}
+  ASP: {fileID: 0}
+  SAP: {fileID: 0}
+  ds: {fileID: 4354437647613037939, guid: bda4a37d38791e646ae8e826ff2cf129, type: 3}
+  ts: {fileID: 8512537532726781797, guid: 2016629be196add46aa5c15b9f60442b, type: 3}
 --- !u!1 &3430481238278578222
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +281,7 @@ GameObject:
   - component: {fileID: 6402020295549546536}
   - component: {fileID: 7280939157645479191}
   - component: {fileID: 7397335081824625373}
+  - component: {fileID: 2493493809573224288}
   m_Layer: 0
   m_Name: PlayerStats
   m_TagString: Untagged
@@ -373,6 +393,24 @@ MonoBehaviour:
   value: {fileID: 0}
   strstat: 5
   Points: {fileID: 0}
+--- !u!114 &2493493809573224288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430481238278578222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4d17c95d992224ea141bd15a3f8faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agi: 0
+  def: 0
+  dex: 0
+  inte: 0
+  luck: 0
+  str: 0
 --- !u!1 &4010806019412443860
 GameObject:
   m_ObjectHideFlags: 0

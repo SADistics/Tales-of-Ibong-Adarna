@@ -45,5 +45,9 @@ public class permstatstr : MonoBehaviour
     {
         return permstr;
     }
+    public void setperm(int newVal)
+    {
+        permstr = newVal;
+    }
 }
 

@@ -13,7 +13,7 @@ public class LevelSystem : MonoBehaviour
     public ActivateMen activateMen;
 
     private int level = 0;
-    private static int permLevel = 1;
+    private static int permLevel;
     private int experience;
     private int experienceToNextLevel;
 
@@ -37,12 +37,19 @@ public class LevelSystem : MonoBehaviour
 
         instance = this;
 
+        if (permLevel == 0)
+        {
+            permLevel++;
+        }
+
         SetLevel(permLevel);
     }
 
     void Update()
     {
-        ExpBar.fillAmount = experience / experienceToNextLevel;
+        if (Input.GetKey(KeyCode.J))
+            AddExperience(100);
+        //ExpBar.fillAmount = experience / experienceToNextLevel;
     }
 
     public bool AddExperience(int experienceToAdd)
@@ -60,7 +67,7 @@ public class LevelSystem : MonoBehaviour
         return false;
     }
 
-    private void SetLevel(int value)
+    public void SetLevel(int value)
     {
         this.level = value;
         permLevel = level;
@@ -85,5 +92,15 @@ public class LevelSystem : MonoBehaviour
     public int GetLVL()
     {
         return permLevel;
+    }
+
+    public void setperm(int val)
+    {
+        permLevel = val;
+    }
+
+    public int GetEXP()
+    {
+        return experience;
     }
 }

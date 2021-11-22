@@ -44,4 +44,8 @@ public class permstatdex : MonoBehaviour
     {
         return permdex;
     }
+    public void setperm(int newVal)
+    {
+        permdex = newVal;
+    }
 }

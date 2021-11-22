@@ -107,7 +107,13 @@ public class AvailableStatPoints : MonoBehaviour
 
     public int Get()
     {
+        Debug.Log(avstat);
         return avstat;
+    }
+
+    public void Restore(int val)
+    {
+        avstat = val;
     }
 
 }

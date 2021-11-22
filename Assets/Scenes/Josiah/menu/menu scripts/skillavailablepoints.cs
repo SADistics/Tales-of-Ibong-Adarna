@@ -22,5 +22,14 @@ public class skillavailablepoints : MonoBehaviour
         val.text = asstat.ToString();
     }
 
+    public int Get()
+    {
+        return asstat;
+    }
+
+    public void Restore(int val)
+    {
+        asstat = val;
+    }
    
 }

@@ -45,4 +45,9 @@ public class permstatdef : MonoBehaviour
     {
         return permdef;
     }
+
+    public void setperm(int newVal)
+    {
+        permdef = newVal;
+    }
 }

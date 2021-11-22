@@ -7,9 +7,18 @@ public class MusicDestroy : MonoBehaviour
 {
     void Awake()
     {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TitleScreen"))
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Music"));
+            Destroy(GameObject.Find("Music"));
+        }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ForestBoss"))
         {
             Destroy(GameObject.FindGameObjectWithTag("Music"));
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage_Town_Respawn"))
+        {
+            Destroy(GameObject.Find("BGM"));
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Chapter 7 Cutscene"))
         {
@@ -45,5 +54,10 @@ public class MusicDestroy : MonoBehaviour
             Destroy(GameObject.Find("ForestMusic"));
             Destroy(GameObject.Find("BossMusic"));
         }
+    }
+
+    public void onReturn()
+    {
+        Destroy(GameObject.Find("BGM"));
     }
 }

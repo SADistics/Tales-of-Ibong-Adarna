@@ -43,7 +43,7 @@ public class ExitTrigger : MonoBehaviour
             SceneManager.LoadScene("EntFor2");
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("EntFor2"))
-            SceneManager.LoadScene(12, LoadSceneMode.Single);
+            SceneManager.LoadScene("Chapter 6", LoadSceneMode.Single);
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Forest1"))
             SceneManager.LoadScene("Forest2");
