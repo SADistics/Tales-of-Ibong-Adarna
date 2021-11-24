@@ -196,7 +196,7 @@ public class PlayerAttack : MonoBehaviour
             }
             if (enemStats.GetHealth() > 0)
             {
-                damage = ((Strength + thrust) - enemStats.GetEnemyDefense());
+                damage = damage + ((Strength + thrust) - enemStats.GetEnemyDefense());
                 if (damage >= 0)
                 {
                     enemStats.Health -= damage;

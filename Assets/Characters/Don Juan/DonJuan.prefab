@@ -261,8 +261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6609efd9b0a1ba438743a8d850e2438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLevel: {fileID: 0}
-  playerStat: {fileID: 0}
+  playerLevel: {fileID: 3857619620178500805}
+  playerStat: {fileID: 2493493809573224288}
   ASP: {fileID: 0}
   SAP: {fileID: 0}
   ds: {fileID: 4354437647613037939, guid: bda4a37d38791e646ae8e826ff2cf129, type: 3}

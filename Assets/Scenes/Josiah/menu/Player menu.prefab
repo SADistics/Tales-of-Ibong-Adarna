@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 756470640846667417}
   m_Layer: 5
   m_Name: vampir
-  m_TagString: Untagged
+  m_TagString: Weapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isequiped: 0
-  weapondamage: 15
+  weapondamage: 3
   img: {fileID: 8504084432859766153}
   altsword1: {fileID: 6048155102165066940}
   altsword2: {fileID: 6961388761766912328}
@@ -2458,7 +2458,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4486890800187414959}
   m_HandleRect: {fileID: 4486890800187414958}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7114,7 +7114,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4486890801293007608}
   m_HandleRect: {fileID: 4486890801293007611}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8939,7 +8939,7 @@ GameObject:
   - component: {fileID: 5804406045120258386}
   m_Layer: 5
   m_Name: copper sword
-  m_TagString: Untagged
+  m_TagString: Weapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9171,7 +9171,7 @@ GameObject:
   - component: {fileID: 4688962508813494810}
   m_Layer: 5
   m_Name: iron sword
-  m_TagString: Untagged
+  m_TagString: Weapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

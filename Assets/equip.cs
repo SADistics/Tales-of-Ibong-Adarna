@@ -30,7 +30,6 @@ public class equip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (isequiped == true)
             img.enabled = true;
         else
@@ -42,24 +41,12 @@ public class equip : MonoBehaviour
         sword1.isequiped = false;
         sword2.isequiped = false;
         isequiped = true;
-       
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>().damage = weapondamage;
     }
 
     public void upgradeweapon()
     {
-        if (isequiped == true) 
-        {
-            success = Random.Range(1, 100);
-            if (success > 4)
-            {
-                weapondmg += 5;
-            }
-            else
-            {
-                thissword.SetActive(false);
-                weapondmg = 0;
-            }
-
-        }
+        weapondamage += 5;
+        weapondmg = weapondamage;
     }
 }
