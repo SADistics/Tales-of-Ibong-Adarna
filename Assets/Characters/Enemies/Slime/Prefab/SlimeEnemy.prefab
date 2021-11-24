@@ -431,9 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90afd2ff8182f6459ce35b6cecc3728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 4694430021710616347}
-  aiDest: {fileID: 4694430022029173632}
-  attack: {fileID: 4694430021980062468}
+  currentState: {fileID: 0}
+  aiDest: {fileID: 0}
+  attack: {fileID: 0}
 --- !u!114 &3112419037071176718
 MonoBehaviour:
   m_ObjectHideFlags: 0

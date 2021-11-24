@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public static Image HealthBarImage;
     public bool isDead;
     public float curHP;
-    private float maxHP;
+    public float maxHP;
     Animator animator;
     public bool isSpotted;
 
