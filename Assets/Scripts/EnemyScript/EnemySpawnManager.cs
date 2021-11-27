@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawnManager : MonoBehaviour
 {
@@ -30,6 +31,12 @@ public class EnemySpawnManager : MonoBehaviour
     {
         GameObject enemy = Instantiate(enemyPrefab[randEnemyPref], spawns.transform.position, Quaternion.identity);
         enemy.GetComponent<Pathfinding.AIDestinationSetter>().moveSpots = new Transform[waypoints.Length];
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ForestPuzzle"))
+        {
+            enemy.GetComponent<Transform>().localScale = new Vector3(10f, 10f, 10f);
+        }
+
         for (int j = 0; j < waypoints.Length; j++)
         {
             enemy.GetComponent<Pathfinding.AIDestinationSetter>().moveSpots[j] = waypoints[j];

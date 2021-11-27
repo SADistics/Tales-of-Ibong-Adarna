@@ -46,7 +46,7 @@ public class ExitTrigger : MonoBehaviour
             SceneManager.LoadScene("Chapter 6", LoadSceneMode.Single);
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Forest1"))
-            SceneManager.LoadScene("Forest2");
+            SceneManager.LoadScene("ForestPuzzle");
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Forest2"))
         {
