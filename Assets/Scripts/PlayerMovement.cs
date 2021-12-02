@@ -11,8 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public GameObject weap;
     [SerializeField]public float speed;
     public float Agility;
+    public int multiplier;
 
     float xMove,xPos,zMove, distToGround;
+
+    AudioSource audioSource;
 
 
     private void Awake()
@@ -20,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         distToGround = GetComponent<Collider>().bounds.extents.y;
+        audioSource = GetComponent<AudioSource>();
+        multiplier = 1;
     }
 
     void Update()
@@ -28,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         if (!VD.isActive && !GetComponent<PlayerHealth>().isDead)
         {
             Movement();
-            rb.velocity = new Vector3(xMove, rb.velocity.y, zMove);
+            rb.velocity = new Vector3(xMove*multiplier, rb.velocity.y, zMove*multiplier);
         }
     }
 
@@ -91,6 +96,12 @@ public class PlayerMovement : MonoBehaviour
         {
             zMove = 0;
             anim.SetBool("IsMove", false);
+        }
+
+        if (anim.GetBool("IsMove"))
+        {
+            if(!audioSource.isPlaying)
+                audioSource.Play();
         }
     }
 

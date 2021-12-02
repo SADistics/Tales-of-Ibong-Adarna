@@ -18,6 +18,9 @@ public class PlayerGuard : MonoBehaviour
     private GameObject guardPrompt;
     private Animator weap;
     private GameObject pm;
+    AudioSource audioSource;
+    public AudioClip audioClip;
+    bool isPlayed;
 
     public QTESys QTR;
     private bool isQTE;
@@ -36,6 +39,7 @@ public class PlayerGuard : MonoBehaviour
         pm = GameObject.Find("DonJuan");
         QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
         Defense = GetComponentInChildren<permstatdef>().defstat;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,6 +65,12 @@ public class PlayerGuard : MonoBehaviour
             {
                 QTECheck();
             }
+            if (!isPlayed)
+            {
+                audioSource.PlayOneShot(audioClip);
+                isPlayed = true;
+            }
+                
             shieldCont.SetActive(true);
             if (currCD < maxCD)
             {
@@ -69,6 +79,7 @@ public class PlayerGuard : MonoBehaviour
             }
             else
             {
+                isPlayed = false;
                 onHit = false;
                 currCD = 0;
                 shieldCont.SetActive(false);

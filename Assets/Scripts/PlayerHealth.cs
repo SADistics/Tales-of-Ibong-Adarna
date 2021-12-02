@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public float maxHP;
     Animator animator;
     public bool isSpotted;
+    public bool isPoisoned;
 
     public void SetHealthBarValue(float value)
     {
@@ -57,6 +58,11 @@ public class PlayerHealth : MonoBehaviour
         Health = GameObject.Find("PlayerStats").GetComponent<permstatdef>().get();
         if (!isDead)
             HealthCheck();
+        if (isPoisoned)
+        {
+            curHP -= 0.1f;
+            SetHealthBarValue(curHP);
+        }
     }
 
     private void HealthCheck()

@@ -10,12 +10,20 @@ public class IdleState : State
     public AIDestinationSetter aiDest;
     public AIPath aiPath;
     public Animator anim;
+    public AudioSource audioSource;
 
     //Patrol
     public EnemyStats enemyStats;
 
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public override State RunCurrentState()
     {
+        if (!audioSource.isPlaying && anim.GetBool("isWalking"))
+            audioSource.Play();
         if (aiPath.canMove)
         {
             anim.SetBool("isWalking", true);

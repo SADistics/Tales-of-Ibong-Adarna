@@ -24,10 +24,19 @@ public class AttackState : State
     private PlayerHealth playerHealth;
     private GameObject playerObject;
     public float knockTime;
+    float chance;
 
     #region UndeadStats
-    float chance;
     bool isSlowed;
+    public bool isPoisoned;
+    #endregion
+
+    #region GoblinStats
+    bool isConfused;
+    #endregion
+
+    #region GhostStats
+    bool isWeaken;
     #endregion
 
     private void Start()
@@ -51,28 +60,22 @@ public class AttackState : State
             {
                 enemyAnim.SetBool("isAttacked", true);
                 enemyAnim.SetBool("isWalking", false);
-                if (enemyStats.type == "Undead" && !isSlowed)
-                {
-                    chance = UnityEngine.Random.Range(1, 10);
-                    chance = chance / 10;
-                    StartCoroutine(Slowed());
-                    /*if (chance <= 0.20f)
-                    {
-                        StartCoroutine(Slowed());
-                    }*/
-                }
-                if(playerGuard.onGuard && !playerGuard.onHit)
+                Debuff();
+
+                if (playerGuard.onGuard && !playerGuard.onHit)
                 {
                     playerGuard.onHit = true;
                 }
                 else if (playerGuard.onHit && playerGuard.onGuard)
                 {
+                    GetComponent<AudioSource>().Play();
                     playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense) - enemyStats.GetEnemyStrength();
                     playerHealth.SetHealthBarValue(playerHealth.curHP);
                     playerObject.GetComponent<Animator>().SetTrigger("onHit");
                 }
                 else
                 {
+                    GetComponent<AudioSource>().Play();
                     playerHealth.curHP = (playerHealth.curHP + playerGuard.Defense) - enemyStats.GetEnemyStrength();
                     playerHealth.SetHealthBarValue(playerHealth.curHP);
                     playerObject.GetComponent<Animator>().SetTrigger("onHit");
@@ -123,11 +126,50 @@ public class AttackState : State
         }
     }
 
-    private IEnumerator Slowed()
+    private void Debuff()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Agility -= 5;
-        yield return new WaitForSeconds(2f);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Agility += 5;
+        if (enemyStats.type == "Undead" && !isSlowed && !playerHealth.isPoisoned)
+        {
+            chance = UnityEngine.Random.Range(1, 10);
+            chance = chance / 10;
+            //StartCoroutine(Poison());
+            if (chance <= 0.60f && chance > 0.30f)
+            {
+                isSlowed = true;
+                StartCoroutine(Slowed());
+            }
+            else if (chance <= 0.30f && chance > 0.20f)
+            {
+                playerHealth.isPoisoned = true;
+                StartCoroutine(Poison());
+            }
+        }
+        if(enemyStats.type == "Goblin" && !isConfused)
+        {
+            chance = UnityEngine.Random.Range(1, 10);
+            chance = chance / 10;
+            //StartCoroutine(Confused());
+            if (chance <= 0.20f)
+            {
+                isConfused = true;
+                StartCoroutine(Confused());
+            }
+        }
+        if(enemyStats.type == "Ghost" && !isWeaken && !playerObject.GetComponent<PlayerAttack>().isBlinded)
+        {
+            chance = UnityEngine.Random.Range(1, 10);
+            chance = chance / 10;
+            if (chance <= 0.60f && chance > 0.30f)
+            {
+                isWeaken = true;
+                StartCoroutine(Weaken());
+            }
+            else if (chance <= 0.30f && chance > 0.20f)
+            {
+                playerObject.GetComponent<PlayerAttack>().isBlinded = true;
+                StartCoroutine(Blind());
+            }
+        }
     }
 
     private IEnumerator KnockCo(Rigidbody player)
@@ -135,9 +177,54 @@ public class AttackState : State
         if(player != null)
         {
             yield return new WaitForSeconds(knockTime);
-            isSlowed = false;
             player.velocity = Vector3.zero;
             player.isKinematic = true;
         }
+    }
+
+    private IEnumerator Slowed()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.gray;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().speed -= 3;
+        yield return new WaitForSeconds(5f);
+        isSlowed = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().speed += 3;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private IEnumerator Confused()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.yellow;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().multiplier = -1;
+        yield return new WaitForSeconds(5f);
+        isConfused = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().multiplier = 1;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private IEnumerator Weaken()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.green;
+        playerGuard.Defense -= 5;
+        yield return new WaitForSeconds(5f);
+        isWeaken = false;
+        playerGuard.Defense += 5;
+        playerObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private IEnumerator Poison()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = new Color(77, 0, 92);
+        yield return new WaitForSeconds(5f);
+        playerHealth.isPoisoned = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private IEnumerator Blind()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.black;
+        yield return new WaitForSeconds(5f);
+        playerObject.GetComponent<PlayerAttack>().isBlinded= false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

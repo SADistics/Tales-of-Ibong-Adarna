@@ -51,6 +51,15 @@ public class PlayerAttack : MonoBehaviour
     public QTESys QTR;
     #endregion
 
+    #region AudioSFX
+    public AudioClip[] audioClips;
+    AudioSource audioSource;
+    #endregion
+
+    #region Debuff
+    public bool isBlinded;
+    #endregion
+
     float random;
 
     void Start()
@@ -60,6 +69,7 @@ public class PlayerAttack : MonoBehaviour
         isAttack = false;
         anim = GetComponent<Animator>();
         weaponAnim = GameObject.Find("WeaponA").GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         skill1Ready = true; skill2Ready = true;
         if (isBow)
         {
@@ -112,6 +122,8 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (enemy != null)
                 {
+                    if(!isBow)
+                        audioSource.PlayOneShot(audioClips[1]);
                     StartCoroutine(KnockCo(enemy));
                 }
             }
@@ -130,8 +142,11 @@ public class PlayerAttack : MonoBehaviour
             if (skill2Ready)
             {
                 StartCoroutine(Skill2At());
+                audioSource.PlayOneShot(audioClips[0]);
                 if (enemy != null)
                 {
+                    if (!isBow)
+                        audioSource.PlayOneShot(audioClips[1]);
                     StartCoroutine(SkillKnockCo(enemy));
                 }
             }
@@ -139,10 +154,13 @@ public class PlayerAttack : MonoBehaviour
         if (QTR.correctKey == 1 && !isAttack)
         {
             StartCoroutine(AttackCo2());
+            audioSource.PlayOneShot(audioClips[0]);
             if (isinRange)
             {
                 if (enemy != null)
                 {
+                    if (!isBow)
+                        audioSource.PlayOneShot(audioClips[1]);
                     StartCoroutine(KnockCo(enemy));
                 }
             }
@@ -186,8 +204,9 @@ public class PlayerAttack : MonoBehaviour
         anim.SetBool("attacking", true);
         weaponAnim.SetTrigger("Attack");
         yield return null;
+        audioSource.PlayOneShot(audioClips[0]);
         anim.SetBool("attacking", false);
-        if (enemy != null)
+        if (enemy != null && !isBlinded)
         {
             random = UnityEngine.Random.Range(1, 99);
             if(random < Luck && enemStats.GetHealth() > 0)
@@ -269,7 +288,7 @@ public class PlayerAttack : MonoBehaviour
         yield return null;
         anim.SetBool("skill2AT", false);
         skill2Ready = false;
-        if (enemy != null)
+        if (enemy != null && !isBlinded)
         {
             if (enemStats.GetHealth() > 0)
             {
