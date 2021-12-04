@@ -196,6 +196,10 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
+    public void adddamage(float x)
+    {
+        Luck += x;
+    }
 
     #region IEnumerators
     public IEnumerator AttackCo()
