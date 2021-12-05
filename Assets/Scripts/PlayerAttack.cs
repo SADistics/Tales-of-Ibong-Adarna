@@ -71,21 +71,29 @@ public class PlayerAttack : MonoBehaviour
         weaponAnim = GameObject.Find("WeaponA").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         skill1Ready = true; skill2Ready = true;
-        if (isBow)
+        if (GameObject.Find("Bow").GetComponent<equip>().isequiped)
         {
+            isBow = true;
             thrust = 5;
             skillImage1 = GameObject.Find("Archer1").GetComponent<Image>();
             skillImage2 = GameObject.Find("Archer2").GetComponent<Image>();
-            GameObject.Find("Warrior1").SetActive(false);
-            GameObject.Find("Warrior2").SetActive(false);
+            skillImage1.enabled = true;
+            skillImage2.enabled = true;
+            GameObject.Find("Warrior1").GetComponent<Image>().enabled = false;
+            GameObject.Find("Warrior2").GetComponent<Image>().enabled = false;
+            GetComponent<SphereCollider>().radius = 1f;
         }
         else
         {
+            isBow = false;
             thrust = 5;
             skillImage1 = GameObject.Find("Warrior1").GetComponent<Image>();
             skillImage2 = GameObject.Find("Warrior2").GetComponent<Image>();
-            GameObject.Find("Archer1").SetActive(false);
-            GameObject.Find("Archer2").SetActive(false);
+            skillImage1.enabled = true;
+            skillImage2.enabled = true;
+            GameObject.Find("Archer1").GetComponent<Image>().enabled=false;
+            GameObject.Find("Archer2").GetComponent<Image>().enabled = false;
+            GetComponent<SphereCollider>().radius = 0.4f;
         }
         QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
         #region Check Weapon Quality
@@ -115,14 +123,15 @@ public class PlayerAttack : MonoBehaviour
     {
         Strength = GetComponentInChildren<permstatstr>().get();
         Luck = GetComponentInChildren<permstatluck>().get();
-        if (Input.GetButtonDown("Fire1")&&!isAttack)
+        WeaponCheck();
+        if (Input.GetButtonDown("Fire1") && !isAttack)
         {
             StartCoroutine(AttackCo()); //Animation
             if (isinRange)
             {
                 if (enemy != null)
                 {
-                    if(!isBow)
+                    if (!isBow)
                         audioSource.PlayOneShot(audioClips[1]);
                     StartCoroutine(KnockCo(enemy));
                 }
@@ -142,7 +151,6 @@ public class PlayerAttack : MonoBehaviour
             if (skill2Ready)
             {
                 StartCoroutine(Skill2At());
-                audioSource.PlayOneShot(audioClips[0]);
                 if (enemy != null)
                 {
                     if (!isBow)
@@ -196,6 +204,39 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
+
+    private void WeaponCheck()
+    {
+        if (GameObject.Find("Bow").GetComponent<equip>().isequiped)
+        {
+            anim.SetBool("isBow", true);
+            isBow = true;
+            thrust = 5;
+            skillImage1 = GameObject.Find("Archer1").GetComponent<Image>();
+            skillImage2 = GameObject.Find("Archer2").GetComponent<Image>();
+            skillImage1.enabled = true;
+            skillImage2.enabled = true;
+            GameObject.Find("Warrior1").GetComponent<Image>().enabled = false;
+            GameObject.Find("Warrior2").GetComponent<Image>().enabled = false;
+            GameObject.Find("WeaponA").GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<SphereCollider>().radius = 1f;
+        }
+        else
+        {
+            anim.SetBool("isBow", false);
+            isBow = false;
+            thrust = 5;
+            skillImage1 = GameObject.Find("Warrior1").GetComponent<Image>();
+            skillImage2 = GameObject.Find("Warrior2").GetComponent<Image>();
+            skillImage1.enabled = true;
+            skillImage2.enabled = true;
+            GameObject.Find("Archer1").GetComponent<Image>().enabled = false;
+            GameObject.Find("Archer2").GetComponent<Image>().enabled = false;
+            GameObject.Find("WeaponA").GetComponent<SpriteRenderer>().enabled=true;
+            GetComponent<SphereCollider>().radius = 0.4f;
+        }
+    }
+
     public void adddamage(float x)
     {
         Luck += x;
@@ -288,7 +329,8 @@ public class PlayerAttack : MonoBehaviour
     {
         currentCoolDown2 = 0;
         anim.SetBool("skill2AT", true);
-        weaponAnim.SetTrigger("skill2AT");
+        if(!isBow)
+            weaponAnim.SetTrigger("skill2AT");
         yield return null;
         anim.SetBool("skill2AT", false);
         skill2Ready = false;
