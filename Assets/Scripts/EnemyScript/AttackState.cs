@@ -133,12 +133,12 @@ public class AttackState : State
             chance = UnityEngine.Random.Range(1, 10);
             chance = chance / 10;
             //StartCoroutine(Poison());
-            if (chance <= 0.60f && chance > 0.30f)
+            if (chance <= 0.60f && chance > 0.30f && !isSlowed)
             {
                 isSlowed = true;
                 StartCoroutine(Slowed());
             }
-            else if (chance <= 0.30f && chance > 0.20f)
+            else if (chance <= 0.30f && chance > 0.20f && !playerHealth.isPoisoned)
             {
                 playerHealth.isPoisoned = true;
                 StartCoroutine(Poison());
@@ -159,12 +159,12 @@ public class AttackState : State
         {
             chance = UnityEngine.Random.Range(1, 10);
             chance = chance / 10;
-            if (chance <= 0.60f && chance > 0.30f)
+            if (chance <= 0.60f && chance > 0.30f && !isWeaken)
             {
                 isWeaken = true;
                 StartCoroutine(Weaken());
             }
-            else if (chance <= 0.30f && chance > 0.20f)
+            else if (chance <= 0.30f && chance > 0.20f && !playerObject.GetComponent<PlayerAttack>().isBlinded)
             {
                 playerObject.GetComponent<PlayerAttack>().isBlinded = true;
                 StartCoroutine(Blind());

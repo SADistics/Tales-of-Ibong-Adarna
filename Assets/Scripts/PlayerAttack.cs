@@ -61,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
     #endregion
 
     float random;
+    public Sprite bow;
 
     void Start()
     {
@@ -81,6 +82,7 @@ public class PlayerAttack : MonoBehaviour
             skillImage2.enabled = true;
             GameObject.Find("Warrior1").GetComponent<Image>().enabled = false;
             GameObject.Find("Warrior2").GetComponent<Image>().enabled = false;
+            GameObject.Find("PlayerBow").GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<SphereCollider>().radius = 1f;
         }
         else
@@ -93,6 +95,7 @@ public class PlayerAttack : MonoBehaviour
             skillImage2.enabled = true;
             GameObject.Find("Archer1").GetComponent<Image>().enabled=false;
             GameObject.Find("Archer2").GetComponent<Image>().enabled = false;
+            GameObject.Find("PlayerBow").GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<SphereCollider>().radius = 0.4f;
         }
         QTR = GameObject.Find("QTESys").GetComponent<QTESys>();
@@ -219,10 +222,12 @@ public class PlayerAttack : MonoBehaviour
             GameObject.Find("Warrior1").GetComponent<Image>().enabled = false;
             GameObject.Find("Warrior2").GetComponent<Image>().enabled = false;
             GameObject.Find("WeaponA").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("PlayerBow").GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<SphereCollider>().radius = 1f;
         }
         else
         {
+            GameObject.Find("PlayerBow").GetComponent<SpriteRenderer>().enabled = false;
             anim.SetBool("isBow", false);
             isBow = false;
             thrust = 5;
