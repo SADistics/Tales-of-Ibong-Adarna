@@ -37,7 +37,7 @@ public class itemeffects : MonoBehaviour
         if (isselect && !used)
         {
             healthpotactivated = true;
-            playerHealth.curHP = playerHealth.maxHP;
+            playerHealth.curHP += (playerHealth.maxHP - playerHealth.curHP) * .1f;
             StartCoroutine(coroutine);
         }
     }
@@ -46,7 +46,7 @@ public class itemeffects : MonoBehaviour
         if (isselect && !used)
         {
             goodhealthpotactivated = true;
-            playerHealth.curHP = playerHealth.maxHP;
+            playerHealth.curHP += (playerHealth.maxHP - playerHealth.curHP) * .5f;
             StartCoroutine(coroutine);
         }
     }
