@@ -27,7 +27,7 @@ public class Itemdescription : MonoBehaviour
         item5 = "increases the players defense by a small value";
         item6 = "increases the players defense by a good value";
         item7 = "increases the players luck by a small value";
-        item8 = "increases the players attack by a small value";
+        item8 = "increases the players chance to strike a critical";
         item9 = "increases the players speed by a small value";
         item10 = "increases the players health by 1";
         item11 = "increases the players attack by good value";

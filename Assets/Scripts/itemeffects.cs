@@ -55,7 +55,7 @@ public class itemeffects : MonoBehaviour
         if (isselect && !used)
         {
             greathealthpotactivated = true;
-            playerHealth.curHP = playerHealth.maxHP;
+            playerHealth.curHP += playerHealth.maxHP - playerHealth.curHP;
             StartCoroutine(coroutine);
             
         }
@@ -67,7 +67,7 @@ public class itemeffects : MonoBehaviour
             mythicalpotacivated = true;
             playerHealth.curHP = playerHealth.maxHP;
             player.GetComponent<PlayerAttack>().damage += player.GetComponent<PlayerAttack>().damage * .1f;
-            player.GetComponent<PlayerMovement>().Agility += 5;
+            player.GetComponent<PlayerMovement>().speed += 5;
             StartCoroutine(coroutine);
           
         }
@@ -97,7 +97,7 @@ public class itemeffects : MonoBehaviour
         if (isselect && !used)
         {
             luckpotactivated = true;
-            player.GetComponentInChildren<permstatluck>().setperm(player.GetComponentInChildren<permstatluck>().get() +10);
+            player.GetComponentInChildren<permstatluck>().setperm(player.GetComponentInChildren<permstatluck>().get() +5);
             StartCoroutine(coroutine);
             
         }
