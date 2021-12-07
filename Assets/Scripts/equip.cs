@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class equip : MonoBehaviour
 {
     public bool isequiped;
+    public string weaponType;
     public int weapondamage;
     private int success;
     public static int weapondmg;

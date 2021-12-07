@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isequiped: 0
+  weaponType: Vampir
   weapondamage: 3
   img: {fileID: 8504084432859766153}
   altsword1: {fileID: 6048155102165066940}
@@ -9955,6 +9956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isequiped: 1
+  weaponType: Copper
   weapondamage: 5
   img: {fileID: 8593219459772829142}
   altsword1: {fileID: 6961388761766912328}
@@ -10268,6 +10270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isequiped: 0
+  weaponType: 
   weapondamage: 5
   img: {fileID: 8680099703829779151}
   altsword1: {fileID: 6048155102165066940}
@@ -10791,6 +10794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isequiped: 0
+  weaponType: Iron
   weapondamage: 15
   img: {fileID: 1491623047781359834}
   altsword1: {fileID: 6048155102165066940}
@@ -11025,6 +11029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isequiped: 0
+  weaponType: Mythical
   weapondamage: 50
   img: {fileID: 1834995279225630867}
   altsword1: {fileID: 6048155102165066940}

@@ -239,6 +239,26 @@ public class PlayerAttack : MonoBehaviour
             GameObject.Find("Archer2").GetComponent<Image>().enabled = false;
             GameObject.Find("WeaponA").GetComponent<SpriteRenderer>().enabled=true;
             GetComponent<SphereCollider>().radius = 0.4f;
+
+            foreach (GameObject weap in GameObject.FindGameObjectsWithTag("Weapons"))
+            {
+                if(weap.GetComponent<equip>().isequiped && weap.GetComponent<equip>().weaponType == "Copper")
+                {
+                    GameObject.Find("WeaponA").GetComponentInChildren<SpriteRenderer>().color = new Color(162, 70, 0);
+                }
+                else if(weap.GetComponent<equip>().isequiped && weap.GetComponent<equip>().weaponType == "Iron")
+                {
+                    GameObject.Find("WeaponA").GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+                else if (weap.GetComponent<equip>().isequiped && weap.GetComponent<equip>().weaponType == "Vampir")
+                {
+                    GameObject.Find("WeaponA").GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                }
+                else if (weap.GetComponent<equip>().isequiped && weap.GetComponent<equip>().weaponType == "Mythical")
+                {
+                    GameObject.Find("WeaponA").GetComponentInChildren<SpriteRenderer>().color = Color.magenta;
+                }
+            }
         }
     }
 
